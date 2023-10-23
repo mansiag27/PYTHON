@@ -1,0 +1,203 @@
+Assignment-1
+1)table 
+n=int(input("enter a number:"))
+for i in range(1,11):
+    print(n,"*",i,"=",n*i)
+
+2)vowel
+n=input("enter a chracter:")
+
+if(n=='a'or n=='e' or n=='i'or n=='o' or n=='u'):
+    print(n,"is vowel")
+else:
+    print(n,"is not a vowel")
+
+3)Display numbers from 3 to 30 except number 24  using while loop.
+i=1
+while(i<=10):
+    print(i)
+    i+=1
+
+4)Display numbers from 3 to 30 except number 24  using while loop.
+for i in range(3,31):
+    if(i==24):
+        continue
+    print(i)
+    i+=1
+
+5)accept marks from the user. Using if…….elif….  Else,  display whether result is  fail, pass, second class , first class, Distinction etc.
+  
+n=int(input("enter marks:"))
+if(n>80):
+    print("firts div")
+elif(n<80 and n>60):
+    print("second div")
+elif(n<60 and n>40):
+    print("third div")
+else:
+    print("fail")
+
+6)print the total of first 10 numbers.
+sum=0
+for i in range(1,11):
+    sum=sum+i
+print(sum)
+
+7)accept numbers till user enters 0 and display the total of all the numbers entered.
+
+sum=0
+n=int(input("enter a number"))
+while(n>0):
+    sum=sum+n
+    n=int(input("enter a number"))
+    
+print(sum)
+
+8) accept a character and display whether it is upper case or lower case or not an alphabet.
+
+n=input("enter a charcater:")
+f=ord(n)
+if(f>=65 and f<=90):
+    print("uppercase")
+elif(f>=97 and f<=122):
+    print("lowercase")
+
+9)display fibonicii series of 10 numbers
+a=0
+b=1
+print(a)
+print(b)
+for i in range(1,11):
+    sum=a+b
+    print(sum)
+    a=b
+    b=sum
+
+10)display prime numbers from 3 to 30
+
+for i in range(3,31):
+    flag=0
+    for j in range(2,i):
+        if(i%j==0):
+            flag=1
+            break
+    if(flag==0):
+        print(i)
+       
+11)accept a number and display whether it is prime or not
+
+n=int(input("entre a number: "))
+flag=0
+for i in range(2,n):
+    if(n%i==0):
+        flag=1
+        break
+if(flag==0):
+    print("prime number")
+else:
+    print("not prime")
+
+12)print the following pattern:
+*
+* *
+* * *
+* * * *
+* * * * *
+
+for i in range(1,7):
+    for j in range(1,i):
+        print("*",end=" ")
+    print()
+
+13)print the following pattern:
+
+* * * * * 
+
+* * * * 
+
+* * * 
+
+* * 
+
+*
+
+for  i in range(5,0,-1):
+    for j in range(i):
+        print("*",end=" ")
+    print()
+
+14)print the following pattern
+		*
+	     *  *
+          *  *  *
+       *  *  *  *
+    *  *  *  *  *
+for i  in range(1,5):
+    for j in range(4,i,-1):
+        print(" ",end=" ")
+    for k in range(i):
+        print("*",end=" ")
+    print()
+
+15)print the following pattern
+
+    * 
+   * * 
+  * * * 
+ * * * * 
+* * * * * 
+for i in range(1,6):
+    for k in range(5,i,-1):
+        print(" ",end=" ")
+    for j in range(i):
+        print(" * ",end=" ")
+    print() 
+
+16)print the following pattern
+
+*   *   *   *   *   
+
+  *   *   *   *   
+
+    *   *   *   
+
+      *   *   
+
+        * 
+for i in range(0,5):
+    for j in range(0,i):
+        print(" ",end=" ")
+    for k in range(5,i,-1):
+        print(" * ",end=" ")
+    print()
+
+
+17) print the following
+
+     * 
+    * * 
+   * * * 
+  * * * * 
+ * * * * * 
+* * * * * * 
+ * * * * * 
+  * * * * 
+   * * * 
+    * * 
+     * 
+
+for i in range(1,6):
+    for k in range(5,i,-1):
+        print(" ",end=" ")
+    for j in range(i):
+        print(" * ",end=" ")
+    print() 
+
+for i in range(1,5):
+    for j in range(0,i):
+        print(" ",end=" ")
+    for k in range(5,i,-1):
+        print(" * ",end=" ")
+    print()
+
+
