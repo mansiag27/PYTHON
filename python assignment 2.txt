@@ -1,0 +1,113 @@
+def add(num1,num2):
+    sum=num1+num2
+    print(sum)
+
+def modify(num1,num2=20):
+    sum=num1+num2
+    print(sum)
+
+def delete():
+    print("detele the value")
+
+n=int(input("enter choice:"))
+
+if(n==1):
+    add(10,20)
+elif(n==2):
+    modify(10)
+elif(n==3):
+    delete()
+else:
+    print("invalid")
+
+q2)
+def sqr(num):
+    s=num*num
+    print(s)
+
+n=int(input("enter a number"))
+sqr(n)
+
+q3)   
+def input_val(val1,val2,val3):
+    print("character: ",val1,"integer: ",val2,"string:",val3)
+
+c=int(input("enter integer"))
+b=str(input("enter character"))
+f=str(input("enter string"))
+input_val(b,c,f)
+
+q4)
+def myfun1():
+    print("i am in myfun1")
+
+def myfun2():
+    print("i am in myfun2")
+    myfun1()
+
+myfun2()
+
+q5)
+
+def accept(n):
+    #n=int(input("enter a number"))
+    if(n>0):
+        return 1
+    elif(n<0):
+        return -1
+    else:
+        return 0
+
+print(accept(23))
+print(accept(-9))
+print(accept(0))
+
+q6)
+def chr_input(ch):
+    n=ord(ch)
+    if(n>=65 and n<=90):
+        n+=32
+        print(chr(n))
+    else:
+        n-=32
+        print(chr(n))
+
+chr_input("m")
+
+#ord to ascii value
+
+q7)
+def chr_input(ch):
+   str1 = ch.swapcase()
+   print(str1)
+
+   str2= ch.swapcase()
+   print(str2)
+
+chr_input("mansi")
+chr_input("MANSI")
+
+q8)
+def validate_string(input_str, min=3, max=5):
+    if (min <= len(input_str) and max>=len(input_str)):
+        return True
+    else:
+        return False
+
+
+input_str = "Helloi"
+result = validate_string(input_str)
+if(result):
+    print("accept string")
+else:
+    print("not valid")
+
+q9)
+
+
+def fun(*vargs):
+    total=sum(vargs)
+    print(total)
+
+fun(10,20,30)
+
