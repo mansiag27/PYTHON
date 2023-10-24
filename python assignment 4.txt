@@ -1,0 +1,958 @@
+assignment 4
+tuple
+1)Write a Python program to count the elements in a list until an element is a tuple.
+Sample input : list = [10, 20, 30, (40,50), 60]
+Sample output = 3
+
+solution--
+list=[10,20,30,(40,50),60]
+count=0
+for i in list:
+    if isinstance(i,tuple):
+        break
+    count+=1
+print(count)
+output--
+3
+		
+2)create a tuple to store 5 numbers and then sort it in ascending and descending order.
+solution--
+
+mytuple = (1,45,32,89,34)
+print(sorted(mytuple))
+print(sorted(mytuple,reverse=True))
+output--
+[1, 32, 34, 45, 89]
+[89, 45, 34, 32, 1]
+
+3)Write a Python program to find the repeated items of a tuple.
+
+solution--
+
+from collections import Counter
+mytuple = (1,45,32,45,34,1)
+my_new=Counter(mytuple)
+
+repeat_n=[i for i, count in my_new.items() if count>1]
+print(repeat_n)
+
+output--
+[1, 45]
+---------------------------------------------------------------
+set
+
+1) accept 10 values from user and add them inside the set. now accept one more value from user and if it is present in the set, remove it. Make sure program doesn't give any error if number is not there inside the set.
+
+solution--
+mylist=[]
+for i in range(1,11):
+    n=int(input("enter values: "))
+    mylist.append(n)
+
+myset=set(mylist)
+print(myset)
+
+n1=int(input("enter values to remove: "))
+
+if n1 in myset:
+    myset.discard(n1)
+else:
+    print("not in set")    
+
+print(myset)
+
+output--
+enter values: 1
+enter values: 2
+enter values: 3
+enter values: 4
+enter values: 5
+enter values: 6
+enter values: 7
+enter values: 8
+enter values: 9
+enter values: 10
+{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+enter values to remove: 55
+not in set
+{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+
+------------------------------------------------------------------
+Dictionary
+
+1)accept 5 students name and store them in the dictionary by providing keys from 1 to 5 respectively.
+
+solution--
+list1=[]
+
+for i in range(5):
+    n=input("enter name:")
+    list1.append(n)
+
+list2=[i for i in range(1,6)]
+
+mydict={key:value for (key,value) in zip(list2,list1)}
+
+print(mydict)
+
+output--
+enter name:mansi
+enter name:manu
+enter name:ketab
+enter name:priya
+enter name:manav
+{1: 'mansi', 2: 'manu', 3: 'ketab', 4: 'priya', 5: 'manav'} 
+
+2)create a dictionary with pairs
+	soap:100
+	deo:300
+	perfume:400
+
+now accept a product name from user (in any case, so you have to handle "ignore case") and display its price. Also , if the product is not present in the dictionary display the error message " product not available "
+	Note:  you should not get "KeyError:" in the program.
+
+
+solution--
+product=["soap","deo","perfume"]
+price=[100,300,400]
+my={key:value for(key,value) in zip(product,price)}
+
+n=input("enter product")
+n=n.casefold()
+if n in my:
+    print(my[n])
+else:
+    print("product not available")
+
+ouput--
+enter productSoap
+100
+
+3)Given a dictionary of students and their favourite colours: 
+people={'Arham':'Blue','Lisa':'Yellow',''Vinod:'Purple','Jenny':'Pink'} 
+1. Find out how many students are in the list 
+2. Change Lisa’s favourite colour 
+3. pr
+4. Sort and print students and their favourite colours alphabetically by name
+
+solution--
+name=["Arham","Lisa","Vinod","Jenny"]
+color=['Blue','Yellow','Purple','Pink']
+my={key:value for(key,value) in zip(name,color)}
+
+print(len(name))
+
+my['Lisa']="black"
+print(my)
+
+my.pop('Jenny')
+print(my)
+
+new=sorted(my.items(),key=lambda x:x[0])
+print(new)
+
+output--
+4
+{'Arham': 'Blue', 'Lisa': 'black', 'Vinod': 'Purple', 'Jenny': 'Pink'}
+{'Arham': 'Blue', 'Lisa': 'black', 'Vinod': 'Purple'}
+[('Arham', 'Blue'), ('Lisa', 'black'), ('Vinod', 'Purple')] 
+
+--------------------------------------------------------------
+List--dictionary
+
+list
+--------------------------------------------------------------
+
+1)Write a Python program to find all the values in a list are greater than a specified number.
+
+ist=[1,34,67,23,12,90]
+
+n=int(input("enter a number:"))
+
+for i in list:
+    if i>n:
+        print(i)
+
+output--
+enter a number:30
+34
+67
+90
+
+2) Write a Python program to find the list of words that are longer than n from a given list of words.
+
+solution--
+list=['mansi','manu','ketan','manav','anurag']
+
+n=int(input("enter length"))
+
+for i in list:
+    if len(i)>n:
+        print(i)
+
+output--
+enter length4
+mansi
+ketan
+manav
+anurag
+
+3)Write a Python program to get the largest number from a list
+
+solution--
+
+list=[1,45,23,2,89,21]
+min=list[0]
+
+for i in list:
+    if i<min:
+        min=i
+    
+print(min)
+
+output--
+1
+
+4)Write a Python program to count the number of strings where the string length is 2 or more and the first and last character are same from a given list of strings. 
+Sample List : ['abc', 'xyz', 'aba', '1221'] """
+
+output
+	aba      1221
+
+
+solution--
+list=['abc','xyz','aba','1221']
+
+for i in list:
+    if len(i)>=2 and i[-1]==i[0]:
+        print(i)
+
+
+output--
+aba
+1221
+
+5)Write a Python program to multiply all the items in a list.
+
+list=[1,2,3,4]
+c=1
+for i in list:
+    c=c*i
+print(c)
+
+output--
+24
+
+6)Write a Python program to print a specified list after removing the 0th, 4th and 5th elements. 
+Sample List : ['Red', 'Green', 'White', 'Black', 'Pink', 'Yellow']
+Expected Output : ['Green', 'White', 'Black'] """
+
+solution--
+list=['red','green','White','black','pink','yellow']
+
+index=[5,4,0]
+
+for i in index:
+    if i<len(list):
+        list.pop(i)
+print(list)
+
+ouput--
+['green', 'White', 'black']
+
+7)Write a Python program to print the numbers of a specified list after removing even numbers from it.
+
+solution--
+list=[1,2,3,4,5,6,7,8,9]
+for i in list:
+    if i%2!=0:
+        print(i)
+
+output--
+1
+3
+5
+7
+9
+
+8)Write a Python program access the index of a list.
+	output : all the elements along with their index
+
+solution--
+list=["mansi","manu","ketan","manav"]
+for i,k in enumerate(list):
+    print(i,k)
+output--
+0 mansi
+1 manu
+2 ketan
+3 manav
+
+9)Write a Python program to check a list is empty or not
+
+list=["mansi","manu","ketan","manav"]
+list1=[]
+
+if len(list1)==0:
+    print("list is empty")
+else:
+    print("not empty")
+
+output--
+list is empty
+
+10)Write a Python program to check whether the n-th element exists in a given list.
+
+solution--
+list=["mansi","manu","ketan","manav"]
+
+n=int(input("enter index:"))
+if n<=len(list):
+    print(list[n],"exits at that pos")
+else:
+    print("not exist")
+
+output--
+enter index:3
+manav exits at that pos
+
+enter index:7
+not exist
+
+
+11)Write a Python program to clone or copy a list
+
+solution--
+
+list=["mansi","manu","ketan","manav"]
+
+list2=list.copy()
+print(list2)
+
+output--
+['mansi', 'manu', 'ketan', 'manav']
+
+12)rite a Python program to convert list to list of dictionaries. 
+Sample lists: ["Black", "Red", "Maroon", "Yellow"], ["#000000", "#FF0000", "#800000", "#FFFF00"]
+Expected Output: [{'color_name': 'Black', 'color_code': '#000000'}, {'color_name': 'Red', 'color_code': '#FF0000'}, {'color_name': 'Maroon', 'color_code': '#800000'}, {'color_name': 'Yellow', 'color_code': '#FFFF00'}]
+ """
+
+solution--
+color=["black","red","maroon","yellow"]
+code=["#000000", "#FF0000", "#800000", "#FFFF00"]
+new=[]
+for i,k in zip(color,code):
+    color_dict={'color_name':i,'color_code':k}
+    new.append(color_dict)
+print(new) 
+
+output--
+[{'color_name': 'black', 'color_code': '#000000'}, {'color_name': 'red', 'color_code': '#FF0000'}, {'color_name': 'maroon', 'color_code': '#800000'}, {'color_name': 'yellow', 'color_code': '#FFFF00'}]
+
+13)Write a Python program to find the index of an item in a specified list.
+
+solution--
+list=["mansi","manu","ketan","priya","manav"]
+n=input("enter item: ")
+if n in list:
+    print(list.index(n))
+
+output--
+enter item: ketan
+2
+
+14)Write a Python program to insert a given string at the beginning of all items in a list. 
+Sample list : [1,2,3,4], string : emp
+Expected output : ['emp1', 'emp2', 'emp3', 'emp4']
+
+
+solution--
+
+list=['1','2','3','4']
+
+n=input("enter item: ")
+
+for i in range(len(list)):
+    list[i]=n+list[i]
+print(list)
+
+output--
+enter item: emp
+['emp1', 'emp2', 'emp3', 'emp4']
+
+15)Write a Python program to iterate over two lists simultaneously. 
+
+solution--
+list=[1,2,3,4]
+list2=['s','f','h','u']
+
+for i,k in zip(list,list2):
+    print(i,k)
+
+output--
+1 s
+2 f
+3 h
+4 u
+
+16)Write a Python program to print a nested lists (each list on a new line) using the print() function.
+
+solution--
+
+list=[
+    [1,2,3],
+    [4,5,6],
+    [7,8,9]
+]
+
+for i in list:
+    print(i)
+
+output--
+[1, 2, 3]
+[4, 5, 6]
+[7, 8, 9]
+
+17)Write a Python program to remove duplicates from a list.
+
+solution--
+list1=[1,2,3,1,4,2]
+
+print(list1)
+
+myset=set(list1)
+print(myset)
+
+output--
+1, 2, 3, 1, 4, 2]
+{1, 2, 3, 4}
+
+18) Write a Python program to replace the last element in a list with another list. 
+Sample data : [1, 3, 5, 7, 9, 10], [2, 4, 6, 8]
+Expected Output: [1, 3, 5, 7, 9, 2, 4, 6, 8]
+
+solution--
+list=[1,2,3,4,5]
+list2=[6,7,8,32]
+
+list[-1:]=list2
+print(list)
+
+output--
+[1, 2, 3, 4, 6, 7, 8, 32]
+
+19) Write a Python function that takes two lists and returns True if they have at least one common member. 
+
+solution--
+list=[1,2,3,4,5]
+list2=[6,0,8,32]
+temp=False
+
+for i in list:
+    for j in list2:
+        if i==j:
+             temp=True
+             break
+        
+if temp:
+    print("common element")
+else:
+    print("no common")
+        
+output--
+no common
+-----------------------------------------------------------------
+
+Dictionary
+
+1) Write a Python program to create a dictionary of keys x, y, and z 
+where each key has as value a list from 11-20, 21-30, and 31-40 respectively. 
+Access the fifth value of each key from the dictionary. 
+{'x': [11, 12, 13, 14, 15, 16, 17, 18, 19],
+'y': [21, 22, 23, 24, 25, 26, 27, 28, 29],
+'z': [31, 32, 33, 34, 35, 36, 37, 38, 39]}
+15
+25
+35
+
+solution--
+my={'x':list(range(11,20)),
+    'y':list(range(21,30)),
+    'z':list(range(31,40))}
+
+v1=my['x'][4]
+v2=my['y'][4]
+v3=my['z'][4]
+print(v1)
+print(v2)
+print(v3)
+
+output--
+15
+25
+35
+
+2) Write a Python script to add a key to a dictionary. 
+Sample Dictionary : {0: 10, 1: 20}
+Expected Result : {0: 10, 1: 20, 2: 30}
+
+solution--
+
+my={x:x*10 for x in range(0,2)}
+print(my)
+my[2]=30
+print(my)
+
+output--
+{0: 0, 1: 10}
+{0: 0, 1: 10, 2: 30}
+
+3) Write a Python script to check whether a given key already exists in a dictionary. 
+
+solution--
+
+
+my={x:x*10 for x in range(0,6)}
+print(my)
+
+n=int(input("enter key: "))
+
+if n in my:
+    print(my[n])
+else:
+    print("invalid key")
+
+output--
+{0: 0, 1: 10, 2: 20, 3: 30, 4: 40, 5: 50}
+enter key: 56
+invalid key
+
+4)Write a Python program to count the values associated with key in a dictionary. 
+Sample data: = [{'id': 1, 'success': True, 'name': 'Lary'}, {'id': 2, 'success': False, 'name': 'Rabi'}, {'id': 3, 'success': True, 'name': 'Alex'}]
+Expected result: Count of how many dictionaries have success as True
+
+solution--
+
+id=[1,2,3]
+success=["True","False","True"]
+name=["Lary","Rabi","Alex"]
+count=0
+new=[]
+
+for i,k,l in zip(id,success,name):
+    ans={'id':i,'success':k,"name":l}
+    new.append(ans)
+print(new)
+
+for i in new:
+    if i["success"]=="True":
+        count+=1
+
+
+print(count)
+
+output--
+
+[{'id': 1, 'success': 'True', 'name': 'Lary'}, {'id': 2, 'success': 'False', 'name': 'Rabi'}, {'id': 3, 'success': 'True', 'name': 'Alex'}]
+2
+
+5) Write a Python program to create a dictionary from two lists without losing duplicate values. 
+Sample lists: ['Class-V', 'Class-VI', 'Class-VII', 'Class-VIII'], [1, 2, 2, 3]
+Expected Output: {'Class-VII': {2}, 'Class-VI': {2}, 'Class-VIII': {3}, 'Class-V': {1}}) 
+
+solution--
+
+class1=["class-V",'class-VI','class-VII','class-VIII']
+value1=[1,2,2,3]
+
+my={key:value for(key,value)in zip(class1,value1)}
+print(my)
+
+output--
+{'class-V': 1, 'class-VI': 2, 'class-VII': 2, 'class-VIII': 3}
+
+6)Write a Python program to check a dictionary is empty or not.
+solution--
+class1=["class-V",'class-VI','class-VII','class-VIII']
+value1=[1,2,2,3]
+
+my={key:value for(key,value)in zip(class1,value1)}
+print(my)
+
+if my.__len__==0:
+    print("empty")
+else:
+    print("not empty")
+
+output--
+{'class-V': 1, 'class-VI': 2, 'class-VII': 2, 'class-VIII': 3}
+not empty
+
+7)Write a Python program to combine two dictionary adding values for common keys. 
+d1 = {'a': 100, 'b': 200, 'c':300}
+d2 = {'a': 300, 'b': 200, 'd':400}
+Sample output: Counter({'a': 400, 'b': 400, 'd': 400, 'c': 300}) 
+
+solution--
+from collections import Counter
+
+list1=['a','b','c']
+list2=[100,200,300]
+
+my1={key:value for (key,value) in zip(list1,list2)}
+print(my1)
+
+list3=['a','b','d']
+list4=[300,200,400]
+
+my2={key:value for (key,value) in zip(list3,list4)}
+print(my2)
+
+result=Counter(my1)+Counter(my2)
+print(result)
+
+
+output--
+{'a': 100, 'b': 200, 'c': 300}
+{'a': 300, 'b': 200, 'd': 400}
+Counter({'a': 400, 'b': 400, 'd': 400, 'c': 300})
+
+
+8)Write a Python program to count number of items in a dictionary value that is a list
+
+sample data:
+
+mydictionary1={'Names':['Rohit','Ganesh','SRK','Akshay'],'age':40,'addresses':['Mumbai','Delhi','Kolkara','Banglore'],'emails':['actor.gmail.com','movie.gmail.com']}
+
+output: 10
+
+solution--
+my={
+    'name':['Rohit','Ganesh','SRK','Akshay'],
+    'age':40,
+    'address':['Mumbai','Delhi','Kolkata','Banglore'],
+    'emails':['actor@gmail.com', 'movie@gmail.com']
+}
+
+count=0
+for i in my.values():
+    if isinstance(i,list):
+        count+=len(i)
+print(count)
+
+output--
+10
+
+9)Write a Python program to create a dictionary from a string. 
+Note: Track the count of the letters from the string.
+Sample string : 'w3resource'
+Expected output: {'3': 1, 's': 1, 'r': 2, 'u': 1, 'w': 1, 'c': 1, 'e': 2, 'o': 1}
+
+solution--
+
+from collections import Counter
+string1='w3resource'
+my=Counter(string1)
+print(my)
+
+output--
+Counter({'r': 2, 'e': 2, 'w': 1, '3': 1, 's': 1, 'o': 1, 'u': 1, 'c': 1})
+
+10)Write a Python program to get the key, value and item in a dictionary
+
+e.g.
+mydictionary={1:'xyz',3:'abc',5:'pqr',2:'xzz'}
+
+output :
+	key     value   
+		total items are 4
+
+
+
+solution--
+my={1:'xyz',3:'abc',5:'pqr',2:'xyz'}
+
+print(my.values())
+print(my.keys())
+print(len(my))
+
+output--
+dict_values(['xyz', 'abc', 'pqr', 'xyz'])
+dict_keys([1, 3, 5, 2])
+4
+
+11)Write a Python program to get the maximum and minimum value in a dictionary.
+
+solution--
+my={1:'xyz',3:'abc',5:'pqr',2:'oyz'}
+
+max1=max(my,key=my.get)
+max_value=my[max1]
+
+min1=min(my,key=my.get)
+min_value=my[min1]
+
+print(max_value)
+print(min_value)
+
+output--
+xyz
+abc
+
+12) Write a Python program to map two lists into a dictionary. 
+
+e.g. 
+given
+prnnos=[1,2,3,4,5,6]
+names=['abc','def','pqr','lmn','xyz','uvw']
+
+output:
+{1: 'abc', 2: 'def', 3: 'pqr', 4: 'lmn', 5: 'xyz', 6: 'uvw'}
+
+solution--
+prnnos=[1,2,3,4,5,6]
+names=['abc','def','pqr','lmn','xyz','uvw']
+
+my={key:value for(key,value) in zip(prnnos,names)}
+print(my)
+
+output--
+{1: 'abc', 2: 'def', 3: 'pqr', 4: 'lmn', 5: 'xyz', 6: 'uvw'}
+
+13)Write a Python program to match key values in two dictionaries. 
+Sample dictionary: {'key1': 1, 'key2': 3, 'key3': 2}, {'key1': 1, 'key2': 2}
+Expected output: key1: 1 is present in both x and y
+
+solution--
+
+my1={'key1': 1, 'key2': 3, 'key3': 2}
+my2={'key1': 1, 'key2': 2}
+
+for key in my1:
+    if key in my2 and my1[key]==my2[key]:
+        print(f"{my1[key]} is present in both my1 and my2")
+
+
+output--
+1 is present in both my1 and my2
+
+14)Write a Python program to print a dictionary line by line. 
+
+Players={'Rohit':{'runs':10000,'centuries':15},'Virat':{'runs':12000,'centuries':18}}
+
+expected output:
+
+Rohit
+runs :	 10000
+centuries :	 15
+Virat
+runs :	 12000
+centuries :	 18
+
+solution--
+Players={'Rohit':{'runs':10000,'centuries':15},
+         'Virat':{'runs':12000,'centuries':18}}
+
+
+for player,stats in Players.items():
+    print(player)
+    for stat,value in stats.items():
+        print(stat,value)
+
+output--
+Rohit
+runs 10000
+centuries 15
+Virat
+runs 12000
+centuries 18
+
+15)Write a Python program to remove a key from a dictionary.
+
+solution--
+my={'a':1,'b':2,'h':5}
+
+my.pop('a')
+print(my)
+
+output--
+{'b': 2, 'h': 5}
+
+16)Write a Python program to remove spaces from dictionary keys. 
+
+Students={'d 01':'Abc','d 0 2':'Xyz','d0 3':'Pqr'}
+
+output:
+
+{'d01': 'Abc', 'd02': 'Xyz', 'd03': 'Pqr'}
+
+solution--
+
+Students={'d 01':'Abc','d 0 2':'Xyz','d0 3':'Pqr'}
+
+new_stu={}
+for key,value in Students.items():
+    new_key=key.replace(' ','')
+    new_stu[new_key]=value
+
+print(new_stu)
+
+output--
+
+{'d01': 'Abc', 'd02': 'Xyz', 'd03': 'Pqr'}
+
+16)Write a Python program to sum all the items in a dictionary. 
+
+
+solution
+my={'item':10,'item1':20,'item2':30}
+total=sum(my.values())
+print(total)
+
+output--
+60
+
+17)Write a Python script to merge two Python dictionaries. 
+
+mydictionary1={1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36}
+mydictionary2={7: 49, 8: 64, 9: 81, 10: 100, 11: 121, 12: 144}
+
+output:
+
+{1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81, 10: 100, 11: 121, 12: 144}
+
+solution--
+
+mydictionary1={1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36}
+mydictionary2={7: 49, 8: 64, 9: 81, 10: 100, 11: 121, 12: 144}
+
+mydictionary1.update(mydictionary2)
+print(mydictionary1)
+
+18)Write a Python script to concatenate following dictionaries to create a new one. 
+Sample Dictionary :
+dic1={1:10, 2:20}
+dic2={3:30, 4:40}
+dic3={5:50,6:60}
+Expected Result : {1: 10, 2: 20, 3: 30, 4: 40, 5: 50, 6: 60}
+
+solution--
+dic1={1:10, 2:20}
+dic2={3:30, 4:40}
+dic3={5:50,6:60}
+
+dic1.update(dic2)
+dic1.update(dic3)
+
+print(dic1)
+-----------------------------------------------------------------
+String---
+1)accept a string and display whether it is palindrom or not.
+
+solution--
+string="mam"
+
+new=string[::-1]
+
+len1=len(string)
+len2=len(new)
+temp=True
+
+if len1!=len2:
+    print("not")
+else:
+    do=True
+    for i in range(len1):
+        if string[i]!=new[i]:
+            do=False
+            break
+
+if do:
+    print("palindrome")
+else:
+    print("not")     
+
+2) accept a string and display it. now accept slicing positions from and to , slice the string and display it.
+
+solution--
+num=input("enter a string: ")
+print(num)
+
+i=int(input("enter start: "))
+j=int(input("enter end: "))
+print(num[i:j])
+
+3) accept a string and display how many vowel characters are there inside it.
+
+solution--
+num=input("enter a string: ")
+print(num)
+count=0
+for i in num:
+    if i=='a' or i=='e' or i=='i' or i=='o' or i=='u':
+        count+=1
+print(count)
+
+4)accept a string and display the characters which are repeated in the string
+
+solution--
+
+num=input("enter a string: ")
+print(num)
+
+repeat=set()
+seen=set()
+
+for i in num:
+    if i in seen:
+        repeat.add(i)
+    else:
+        seen.add(i)
+
+print(repeat)
+
+5)accept a string and find out how many words are there in it.
+
+input1=input("enter a string: ")
+words=input1.split()
+count=len(words)
+print(count)
+
+6)accept a sentence and reverse it.
+	e.g.  hello world
+		world hello
+solution--
+input1=input("enter a string: ")
+
+w=input1.split()
+reverse=' '.join(reversed(w))
+print(reverse)
+
+7)A pangram is a sentence that contains all the alphabets.
+example: The quick brown fox jumps over the lazy dog. Your task here is to write a function to check a sentence to see if it is a pangram or not.
+
+solution--
+input1 = input("Enter a string: ")
+
+input1 = input1.lower()
+
+letters = set(input1)
+
+if len(letters) == 26:
+    print("Pangram")
+else:
+    print("Not a pangram")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
