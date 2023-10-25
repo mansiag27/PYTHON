@@ -1,0 +1,221 @@
+Assignmnet --5
+strings-
+
+1)
+Write a Python program to get a string from a given string where all occurrences of its first char 
+have been changed to '$', except the first char itself. 
+Sample String : 'restart'
+Expected Result : 'resta$t'
+
+solution--
+import re
+str="$"
+mystring=input("enter string: ")
+count=0
+
+h=mystring[::-1]
+count=mystring.count('r')
+print(count)
+if count>1:
+    n=re.compile("r",re.IGNORECASE)
+    result=n.sub("$",h,count=count-1)
+    ans=result[::-1]
+
+print(ans)
+
+
+output--
+enter string: restart
+2
+resta$t
+
+2) Write a Python program to add 'ing' at the end of a given string (length should be at least 3). 
+If the given string already ends with 'ing' then add 'ly' instead. If the string length of the given string is less than 3, 
+leave it unchanged. 
+Sample String : 'abc'
+Expected Result : 'abcing'
+Sample String : 'string'
+Expected Result : 'stringly'
+
+solution--
+
+
+str=input("enter a string: ")
+if "ing" in str and len(str)>3:
+    str+="ly"
+elif len(str)>=3:
+    str+="ing"
+print(str)
+
+output--
+enter a string: abc
+abcing
+
+enter a string: string
+stringly
+
+
+3)Write a Python program to calculate the length of a string.
+	[ without any inbuilt function ]
+
+solution--
+
+str=input("enter a string: ")
+count=0
+for i in str:
+    count+=1
+
+print(count)   
+
+output--
+enter a string: mansi
+5
+
+4)Write a Python program to count the number of characters (character frequency) in a string. 
+Sample String : google.com'
+
+
+solution--
+
+
+from collections import Counter
+str=input("enter a string: ")
+
+my=Counter(str)
+print(my)
+
+output--
+enter a string: google.com
+Counter({'o': 3, 'g': 2, 'l': 1, 'e': 1, '.': 1, 'c': 1, 'm': 1})
+
+5) Write a Python program to get a string made of the first 2 and the last 2 chars from a given a string. If the string length is less than 2, return the same string instead of the empty string
+
+solution--
+str=input("enter a string: ")
+
+if len(str)<2:
+    print(str)
+else:
+    a=str[:2]
+    b=str[-2:]
+    new=a+b
+    print(new)
+
+output--
+enter a string: harshit
+hait
+
+6) Write a Python program to get a single string from two given strings, separated by a space and swap the first two characters of each string. 
+Sample String : 'abc', 'xyz'
+Expected Result : 'xyc abz'
+
+solution--
+
+str1=input("enter string1: ")
+str2=input("enter string2: ")
+
+new1=str2[:2]+"c"
+new2=str1[:2]+"z"
+
+new=new1+"\t"+new2
+print(new)
+
+
+output--
+enter string1: abc
+enter string2: xyz
+xyc     abz
+
+--------------------------------------------------------------------------------
+
+Extra Assignment
+
+1) Accept a number from the user check if it is special 
+ * number or not? 
+Example: 145
+1! =1 
+4!=1*2*3*4 
+5!=1*2*3*4*5 
+Sum of the factorials is (1+24+120=145) 
+
+solution
+def factorial(a):
+    fact1=1
+    while a!=0:
+        fact1=fact1*a
+        a-=1
+    return fact1
+
+num=int(input("enter a number: "))    
+sum=0  
+num1=num 
+while num!=0:
+    rem=num%10
+    sum+=factorial(rem)
+    num//=10
+
+if(num1==sum):
+    print("special number")
+else:
+    print("not special")    
+
+
+
+output--
+enter a number: 145
+special number
+
+2)accept a number (maximum 5 digit number) and  calculate sum of its digits.
+solution--
+n=int(input("enter a number: "))
+sum=0
+while(n!=0):
+    rem=n%10
+    sum=sum+rem
+    n//=10
+print("sum: ",sum)
+
+
+output--
+enter a number: 12345
+sum:  15
+
+3) Print 4 digit armstrong numbers
+ e.g.  1634, 8208, 9474 are four-digit Armstrong numbers
+
+solution--
+n=int(input("enter a number: "))
+sum=0
+num=n
+while(n!=0):
+    rem=n%10
+    sum+=rem**4
+    n//=10
+if(num==sum):
+    print("armstrong")
+else:
+    print("not")
+
+output--
+enter a number: 1634
+1634
+armstrong
+
+4)accept principle amt, rate of interest and no. of years and calculate simple interest.
+	[ formula :    principle_amt*rate*years)/100 ]
+
+solution--
+p=int(input("principle: "))
+r=int(input("rate: "))
+t=int(input("time: "))
+si=(p*r*t)/100
+print("simple interest->",si)
+
+output--
+principle: 1000
+rate: 2
+time: 2
+simple interest-> 40.0
+
+
+
