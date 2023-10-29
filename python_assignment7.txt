@@ -1,0 +1,111 @@
+Assignment--7
+
+1)class Sample:
+    def __init__(self,data):
+        self.data=data
+    def __mul__(self,obj):
+        return self.data*obj.data
+    def __sub__(self,obj):
+        return self.data-obj.data
+    def __add__(self,obj):
+        return self.data+obj.data
+
+
+s1=Sample(7)
+s2=Sample(5)
+s3=Sample(8)
+s4=Sample(12)
+
+s5=s4-s1+s3*s2
+
+print(s5)
+
+2)
+
+class Myclass:
+    def __init__(self,x):
+        self.x=x
+    def __gt__(self,obj):
+        return self.x > obj.x
+    def __lt__(self,obj):
+        return self.x < obj.x
+    def __eq__(self,obj):
+        return self.x == obj.x
+    
+s1=Myclass(7)
+s2=Myclass(98)
+s3=Myclass(7)
+
+s5=s1<s2
+s6=s1>s2
+
+print(s5)
+print(s6)
+print(s1==s3)
+
+
+
+----------------------------------------
+class Sample:
+    def __init__(self,data):
+        self.data=data
+    def __mul__(self,obj):
+        obj.data= self.data*obj.data
+        return obj
+    def __sub__(self,obj):
+        obj.data= self.data-obj.data
+        return obj
+    def __add__(self,obj):
+        obj.data= self.data+obj.data
+        print("add")
+        return obj
+
+
+s1=Sample(7)
+s2=Sample(5)
+s3=Sample(8)
+s4=Sample(12)
+
+s5=s4-s1+s3*s2
+print(type(s5))
+
+print(s5.data)
+
+
+----------------------------------------------------------------------------------
+
+exception
+1)
+class VotingNotAllowedException(Exception):
+    pass
+
+class voter:
+    def __init__(self,name,age):
+        self.name=name
+        self.age=age
+        if(self.age<18):
+            raise VotingNotAllowedException("VotingNotAllowedException")
+
+
+
+
+
+from mypack import voter
+
+    
+n=input("enter name:")
+age=int(input("enter age: "))
+try:
+    voter.voter(n,age)
+except Exception as e:
+    print("not allowed",e)
+else:
+    print("go for voting")
+
+
+#v1=voter.voter("mansi",23)
+
+
+
+
+
