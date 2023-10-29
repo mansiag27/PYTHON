@@ -1,0 +1,11 @@
+
+9)Write a Python program to clone or copy a list. 
+
+list=[] 
+for i in range(5):
+    n=input("enter values")
+    list.append(n)
+print(list)
+list2=[]
+list2=list.copy()
+print(list2)

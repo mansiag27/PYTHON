@@ -1,0 +1,44 @@
+11)Write a Python function that takes two lists and returns True if they have at least one common member. 
+
+list1=[]
+list2=[]
+for i in range(4):
+    n=input("enter value for list1")
+    list1.append(n)
+
+for i in range(4):
+    n=input("enter value for list2")
+    list2.append(n)
+
+def two_list(list1,list2):
+    for i in range(4):
+        for j in range(4):
+            if list1[i]==list2[j]:
+                return True
+            else:
+                return False
+
+result=two_list(list1,list2)
+print(result)
+
+output--
+enter value for list11
+enter value for list12
+enter value for list13
+enter value for list14
+enter value for list25
+enter value for list26
+enter value for list27
+enter value for list21
+True
+PS C:\Users\hrsht> & C:/Users/hrsht/AppData/Local/Programs/Python/Python39/python.exe c:/Users/hrsht/Desktop/h.py
+enter value for list11
+enter value for list12
+enter value for list13
+enter value for list14
+enter value for list25
+enter value for list26
+enter value for list27
+enter value for list28
+False
+

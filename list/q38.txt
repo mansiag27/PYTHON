@@ -1,0 +1,14 @@
+38)Write a Python program to change the position of every n-th value with the (n+1)th in a list. 
+Sample list: [0,1,2,3,4,5]
+Expected Output: [1, 0, 3, 2, 5, 4]
+
+solution--
+list1=[0,1,2,3,4,5]
+
+for i in range(0,len(list1)-1,2):
+    list1[i],list1[i+1]=list1[i+1],list1[i]
+
+print(list1)
+
+output--
+[1, 0, 3, 2, 5, 4]

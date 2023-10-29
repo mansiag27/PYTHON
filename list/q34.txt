@@ -1,0 +1,21 @@
+34)Write a Python program using Sieve of Eratosthenes method for computing primes upto a specified number. 
+
+solution--
+limit = 30
+sieve = [True] * (limit + 1)
+sieve[0] = sieve[1] = False
+
+for number in range(2, int(limit**0.5) + 1):
+    if sieve[number]:
+        for multiple in range(number**2, limit + 1, number):
+            sieve[multiple] = False
+
+primes = [num for num, is_prime in enumerate(sieve) if is_prime]
+
+print("Prime numbers up to", limit, "are:")
+print(primes)
+
+output--
+
+Prime numbers up to 30 are:
+[2, 3, 5, 7, 11, 13, 17, 19, 23, 29]

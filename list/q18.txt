@@ -1,0 +1,17 @@
+18)Write a Python program to generate all permutations of a list in Python. 
+
+import itertools
+list_n=[x for x in range(3)]
+
+p=list(itertools.permutations(list_n))
+
+for i in p:
+    print(i)
+
+output--
+(0, 1, 2)
+(0, 2, 1)
+(1, 0, 2)
+(1, 2, 0)
+(2, 0, 1)
+(2, 1, 0)

@@ -1,0 +1,20 @@
+
+32)Write a Python program to check whether a list contains a sublist.
+
+solution--
+list=[1,65,34,23,90,53,24]
+
+sublist=[34,23,90]
+def substring(list,sublist):
+    for i in range(len(list)-len(sublist)+1):
+        if list[i:i+len(sublist)==sublist]:
+            return True
+    return False
+
+if substring:
+    print("yes it has")
+else:
+    print("no")    
+
+output--
+yes it has

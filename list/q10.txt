@@ -1,0 +1,24 @@
+10)Write a Python program to find the list of words that are longer than n from a given list of words. 
+
+list=[]
+for i in range(5):
+    n=input("enter value")
+    list.append(n)
+print(list)
+
+new_list=[]
+n=int(input("enter length:"))
+for i in list:
+    if n<len(i):
+        new_list.append(i)
+print(new_list)
+    
+output--
+enter valuemansi
+enter valuemanu
+enter valueharshit
+enter valuekritika
+enter valuesonika
+['mansi', 'manu', 'harshit', 'kritika', 'sonika']
+enter length:4
+['mansi', 'harshit', 'kritika', 'sonika']

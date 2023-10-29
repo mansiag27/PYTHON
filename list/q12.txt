@@ -1,0 +1,28 @@
+12)Write a Python program to print a specified list after removing the 0th, 4th and 5th elements. 
+
+list=[]
+for i in range(6):
+    n=input("enter value")
+    list.append(n)
+print(list)
+
+index=[5,4,0]
+
+for i in index:
+    if 0<= i<len(list):
+        list.pop(i)
+    else:
+        print("out of range")
+print(list)
+
+output--
+
+enter valuered
+enter valuegreen
+enter valuewhite
+enter valueblack
+enter valuepink
+enter valueyello
+['red', 'green', 'white', 'black', 'pink', 'yello']
+['green', 'white', 'black']
+

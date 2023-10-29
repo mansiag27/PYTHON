@@ -1,0 +1,25 @@
+26)Write a python program to check whether two lists are circularly identical. 
+
+solution--
+def circularlist(list1, list2):
+    if len(list1) != len(list2):
+        return False
+
+    list2_str = ''.join(map(str, list2))  # Convert list2 to a string
+    list2_str += list2_str  # Double the string by concatenating it with itself
+
+    list1_str = ''.join(map(str, list1))  # Convert list1 to a string
+
+    return list1_str in list2_str
+
+list1 = [1, 2, 3, 4, 5]
+list2 = [4, 5, 1, 2, 3]
+
+if circularlist(list1, list2):
+    print("yes")
+else:
+    print("no")
+
+output--
+
+yes

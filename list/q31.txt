@@ -1,0 +1,18 @@
+31) Write a Python program to count the number of elements in a list within a specified range. 
+
+solution--
+list=[1,65,34,23,90,53,24]
+
+
+start=int(input("enter start range: "))
+end=int(input("enter end range: "))
+
+for i in list:
+    if i>=start and i<=end:
+        print(i)
+
+output--
+enter start range: 20
+enter end range: 30
+23
+24

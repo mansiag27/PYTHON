@@ -1,0 +1,24 @@
+7). Write a Python program to remove duplicates from a list. 
+
+list=[]
+for i in range(5):
+    n=input("enter a number")
+    list.append(n)
+
+print(list)
+
+j=[]
+for i in list:
+    if i not in j:
+        j.append(i)
+
+print(j)
+
+output--
+enter a number23
+enter a number1
+enter a number34
+enter a number23
+enter a number1
+['23', '1', '34', '23', '1']
+['23', '1', '34']

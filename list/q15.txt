@@ -1,0 +1,20 @@
+15)Write a Python program to shuffle and print a specified list. 
+import random
+list=[]
+for i in range(5):
+    n=int(input("enter value: "))
+    list.append(n)
+
+print(list)
+random.shuffle(list)
+print(list)
+
+output--
+
+enter value: 1
+enter value: 2
+enter value: 3
+enter value: 4
+enter value: 5
+[1, 2, 3, 4, 5]
+[1, 2, 4, 5, 3]

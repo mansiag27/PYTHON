@@ -1,0 +1,9 @@
+24)Write a Python program to append a list to the second list. 
+list1=["mansi","manu","ketan"]
+list2=["manav","anurag"]
+
+list1.extend(list2)
+print(list1)
+
+output--
+['mansi', 'manu', 'ketan', 'manav', 'anurag']

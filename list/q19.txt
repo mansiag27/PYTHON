@@ -1,0 +1,30 @@
+19)Write a Python program to get the difference between the two lists. 
+
+list_n=[1,2,3]
+list_m=[3,4,5]
+result=[x for x in list_n if x not in list_m]
+print(result)
+
+output--
+
+[1, 2]
+
+20)Write a Python program access the index of a list. 
+my_list=["mango","cherry","strawberry","pears"]
+
+for index,val in enumerate(my_list):
+    print(f"{index}\t{val}")
+
+a="pears"
+if a in my_list:
+    index=my_list.index(a)
+    print(f"{a} at index {index}")
+else:
+    print("not")
+output--
+0       mango
+1       cherry
+2       strawberry
+3       pears
+pears at index 3
+

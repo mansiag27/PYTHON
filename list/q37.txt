@@ -1,0 +1,14 @@
+37)Write a Python program to find common items from two lists. 
+solution--
+list1=[1,2,3,4,5]
+
+list2=[3,4,7,8]
+
+for i in list1:
+    for j in list2:
+        if i==j:
+            print(j)
+
+output--
+3
+4

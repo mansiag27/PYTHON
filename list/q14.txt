@@ -1,0 +1,19 @@
+14) Write a Python program to print the numbers of a specified list after removing even numbers from it. 
+list=[]
+for i in range(5):
+    n=int(input("enter value: "))
+    list.append(n)
+
+new_list=[]
+for i in list:
+    if i%2==0:
+        new_list.append(i)
+print(new_list)
+
+output--
+enter value: 1
+enter value: 2
+enter value: 3
+enter value: 4
+enter value: 5
+[2, 4]

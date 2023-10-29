@@ -1,0 +1,9 @@
+21)Write a Python program to convert a list of characters into a string. 
+          
+list=['h','e','l','l','o']
+char_str=''.join(list)
+print(char_str)
+          
+
+output--
+hello

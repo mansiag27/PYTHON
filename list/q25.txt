@@ -1,0 +1,9 @@
+25)Write a Python program to select an item randomly from a list. 
+import random
+list1=["mansi","manu","ketan"]
+
+rand=random.choice(list1)
+print(rand)
+
+output--
+mansi

@@ -1,0 +1,16 @@
+8)Write a Python program to check a list is empty or not. 
+
+
+def is_empty(input_list):
+    if len(input_list)==0:
+        return "empty"
+    else:
+        return "not empty"
+
+
+list=[]
+ans=is_empty(list)
+print(ans)
+
+output--
+empty

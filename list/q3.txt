@@ -1,0 +1,24 @@
+3)Write a Python program to get the largest number from a list. 
+
+
+list=[]
+for i in range(5):
+    n=int(input("enter a number:"))
+    list.append(n)
+max_n=list[0]
+
+for i in range(1,len(list)):
+    if list[i]>max_n:
+        max_n=list[i]
+
+print(list)
+print(max_n)   
+
+output:
+enter a number:23
+enter a number:56
+enter a number:1
+enter a number:7
+enter a number:45
+[23, 56, 1, 7, 45]
+56

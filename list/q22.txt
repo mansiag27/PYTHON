@@ -1,0 +1,11 @@
+
+22)Write a Python program to find the index of an item in a specified list. 
+
+list=["mansi","manu","ketan","priya","manav"]
+a="manu"
+
+index=list.index(a)
+print(f"{a} at index {index}")
+
+output--
+manu at index 1
