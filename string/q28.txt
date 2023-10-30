@@ -1,0 +1,22 @@
+28) Write a Python program to add a prefix text to all of the lines in a string. 
+
+solution--
+import textwrap
+
+text=""" This is a sample question.
+      it is used to remove 
+        indentation from 
+   specific lines"""
+
+add1='hello'
+
+line=text.split('\n')
+prefix1=[add1+ i for i in line]
+r='\n'.join(prefix1)
+print(r)
+
+output--
+hello This is a sample question.
+hello      it is used to remove 
+hello        indentation from 
+hello   specific lines

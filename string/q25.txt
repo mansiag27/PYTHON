@@ -1,0 +1,17 @@
+26) Write a Python program to display formatted text (width=50) as output. 
+
+solution--
+import textwrap
+
+text="i am mansi agarwal i live in allahabad"
+width=10
+#width=50
+
+wrapped_text=textwrap.fill(text,width)
+print(wrapped_text)
+
+output--
+i am mansi
+agarwal i
+live in
+allahabad

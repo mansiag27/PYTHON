@@ -1,0 +1,5 @@
+import textwrap()
+
+1)wrapped_text=textwrap.fill(text,width)
+2)dent1=textwrap.dedent(text)
+

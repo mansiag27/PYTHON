@@ -1,0 +1,16 @@
+27)Write a Python program to remove existing indentation from all of the lines in a given text. 
+
+solution--
+
+import textwrap
+
+text="""
+    This is a sample question.
+      it is used to remove 
+        indentation from 
+   specific lines
+         """
+
+print(text)
+dent1=textwrap.dedent(text)
+print(dent1)

@@ -1,0 +1,29 @@
+25)Write a Python program to create a Caesar encryption. 
+
+solution--
+def ceasar_encrypt(text,shift):
+    encrypted_text=""
+    for i in text:
+        if i.isalpha():
+            
+            is_upper=i.isupper()
+            i=i.lower()
+            
+            shifted_i=chr(((ord(i)-ord('a')+shift)%26)+ord('a'))
+            
+            if is_upper:
+                shifted_i=shifted_i.upper()
+            encrypted_text+=shifted_i
+        else:
+            encrypted_text+=i
+    return encrypted_text
+
+text="Hello world!"
+shift=3
+encrypted_text=ceasar_encrypt(text, shift)
+print(text)
+print(encrypted_text)
+
+output--
+Hello world!
+Khoor zruog!
