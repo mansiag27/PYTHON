@@ -1,0 +1,10 @@
+36)Write a Python program to format a number with a percentage. 
+
+solution--
+
+num=0.45
+ans="{:.2%}".format(num)
+print(ans)
+
+output--
+45.00%

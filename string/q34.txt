@@ -1,0 +1,14 @@
+34)Write a Python program to print the following integers with '*' on the right of specified width. 
+
+solution--
+
+import textwrap
+text=[1,2,3,4,5]
+width=30
+#f=str(text).zfill(width)
+f=str(text).rjust(width,'*')
+#new=str(text).ljust(width,'0')
+print(f)
+
+output--
+***************[1, 2, 3, 4, 5]

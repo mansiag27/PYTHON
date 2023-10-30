@@ -1,0 +1,9 @@
+35)Write a Python program to display a number with a comma separator. 
+
+solution--
+str1="1234"
+new=','.join(str1)
+print(new)
+
+output--
+1,2,3,4

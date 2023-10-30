@@ -1,0 +1,13 @@
+33) Write a Python program to print the following integers with zeros on the left of specified width. 
+solution--
+
+import textwrap
+text=[1,2,3,4,5]
+width=30
+#f=str(text).zfill(width)
+#new=str(text).rjust(width,'0')
+new=str(text).ljust(width,'0')
+print(new)
+
+output--
+[1, 2, 3, 4, 5]000000000000000

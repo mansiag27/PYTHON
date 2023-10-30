@@ -1,0 +1,19 @@
+37)Write a Python program to display a number in left, right and center aligned of width 10. 
+
+solution--
+num=34
+width=10
+
+right=('{:>{width}}'.format(num, width=width))
+print(right)
+
+left=('{:<{width}}'.format(num, width=width))
+print(left)
+
+center=('{:^{width}}'.format(num, width=width))
+print(center)
+
+output--
+        34
+34        
+    34  
