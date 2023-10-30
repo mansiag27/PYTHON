@@ -1,0 +1,1352 @@
+list question--
+
+1)Write a Python program to sum all the items in a list. 
+
+list=[]
+sum=0
+for i in range(5):
+    n=int(input("enter a number: "))
+    list.append(n)
+    sum=sum+n
+print(list)
+print(sum)
+
+output--
+
+enter a number: 1
+enter a number: 2
+enter a number: 3
+enter a number: 4
+enter a number: 5
+[1, 2, 3, 4, 5]
+15
+
+2)Write a Python program to multiplies all the items in a list
+
+list=[]
+sum=1
+for i in range(5):
+    n=int(input("enter a number: "))
+    list.append(n)
+    sum=sum*n
+print(list)
+print(sum)
+
+output--
+
+enter a number: 1
+enter a number: 2
+enter a number: 3
+enter a number: 4
+enter a number: 8
+[1, 2, 3, 4, 8]
+192
+
+3)Write a Python program to get the largest number from a list. 
+
+
+list=[]
+for i in range(5):
+    n=int(input("enter a number:"))
+    list.append(n)
+max_n=list[0]
+
+for i in range(1,len(list)):
+    if list[i]>max_n:
+        max_n=list[i]
+
+print(list)
+print(max_n)   
+
+output:
+enter a number:23
+enter a number:56
+enter a number:1
+enter a number:7
+enter a number:45
+[23, 56, 1, 7, 45]
+56
+
+4). Write a Python program to get the smallest number from a list. 
+
+
+list=[]
+for i in range(5):
+    n=int(input("enter a number:"))
+    list.append(n)
+min_n=list[0]
+
+for i in range(1,len(list)):
+    if list[i]<min_n:
+        min_n=list[i]
+
+print(list)
+print(min_n)   
+
+output--
+
+enter a number:23
+enter a number:45
+enter a number:34
+enter a number:5
+enter a number:75
+[23, 45, 34, 5, 75]
+5
+
+5)Write a Python program to count the number of strings where the string length is 2 or more and the first and last character are same from a given list of strings. 
+Sample List : ['abc', 'xyz', 'aba', '1221']
+Expected Result : 2
+
+
+list=[]
+count=0
+for i in range(4):
+    n=input("enter name:")
+    list.append(n)
+print(list)
+for i in list:
+    if len(i) > 2 and i[0] == i[-1]:
+        count+=1
+
+print(count)
+
+output--
+enter name:abc
+enter name:xyz
+enter name:aba
+enter name:1221
+['abc', 'xyz', 'aba', '1221']
+2
+
+6)Write a Python program to get a list, sorted in increasing order by the last element in each tuple from a given list of non-empty tuples. 
+Sample List : [(2, 5), (1, 2), (4, 4), (2, 3), (2, 1)]
+Expected Result : [(2, 1), (1, 2), (2, 3), (4, 4), (2, 5)]
+
+solution--
+
+tuple_list=[(2,5),(1,2),(4,4),(2,3),(2,1)]
+new_list=sorted(tuple_list,key=lambda x:x[-1])
+print(new_list)
+
+
+##########################
+final=[]
+list=[]
+num_list=int(input("enter number of tuples"))
+
+for _ in range(num_list):
+    input_list=input("enter a tuple")
+    x,y=map(int,input_list.split(','))
+    final.append((x,y))
+sort_l=sorted(final,key=lambda x:x[-1])
+print(sort_l)
+
+
+output--
+[(2, 1), (1, 2), (2, 3), (4, 4), (2, 5)]
+enter number of tuples5
+enter a tuple2,5
+enter a tuple1,2
+enter a tuple4,4
+enter a tuple2,3
+enter a tuple2,1
+[(2, 1), (1, 2), (2, 3), (4, 4), (2, 5)]
+
+7). Write a Python program to remove duplicates from a list. 
+
+list=[]
+for i in range(5):
+    n=input("enter a number")
+    list.append(n)
+
+print(list)
+
+j=[]
+for i in list:
+    if i not in j:
+        j.append(i)
+
+print(j)
+
+output--
+enter a number23
+enter a number1
+enter a number34
+enter a number23
+enter a number1
+['23', '1', '34', '23', '1']
+['23', '1', '34']
+
+8)Write a Python program to check a list is empty or not. 
+
+
+def is_empty(input_list):
+    if len(input_list)==0:
+        return "empty"
+    else:
+        return "not empty"
+
+
+list=[]
+ans=is_empty(list)
+print(ans)
+
+output--
+empty
+
+9)Write a Python program to clone or copy a list. 
+
+list=[] 
+for i in range(5):
+    n=input("enter values")
+    list.append(n)
+print(list)
+list2=[]
+list2=list.copy()
+print(list2)
+
+10)Write a Python program to find the list of words that are longer than n from a given list of words. 
+
+list=[]
+for i in range(5):
+    n=input("enter value")
+    list.append(n)
+print(list)
+
+new_list=[]
+n=int(input("enter length:"))
+for i in list:
+    if n<len(i):
+        new_list.append(i)
+print(new_list)
+    
+output--
+enter valuemansi
+enter valuemanu
+enter valueharshit
+enter valuekritika
+enter valuesonika
+['mansi', 'manu', 'harshit', 'kritika', 'sonika']
+enter length:4
+['mansi', 'harshit', 'kritika', 'sonika']
+
+11)Write a Python function that takes two lists and returns True if they have at least one common member. 
+
+list1=[]
+list2=[]
+for i in range(4):
+    n=input("enter value for list1")
+    list1.append(n)
+
+for i in range(4):
+    n=input("enter value for list2")
+    list2.append(n)
+
+def two_list(list1,list2):
+    for i in range(4):
+        for j in range(4):
+            if list1[i]==list2[j]:
+                return True
+            else:
+                return False
+
+result=two_list(list1,list2)
+print(result)
+
+output--
+enter value for list11
+enter value for list12
+enter value for list13
+enter value for list14
+enter value for list25
+enter value for list26
+enter value for list27
+enter value for list21
+True
+PS C:\Users\hrsht> & C:/Users/hrsht/AppData/Local/Programs/Python/Python39/python.exe c:/Users/hrsht/Desktop/h.py
+enter value for list11
+enter value for list12
+enter value for list13
+enter value for list14
+enter value for list25
+enter value for list26
+enter value for list27
+enter value for list28
+False
+
+12)Write a Python program to print a specified list after removing the 0th, 4th and 5th elements. 
+
+list=[]
+for i in range(6):
+    n=input("enter value")
+    list.append(n)
+print(list)
+
+index=[5,4,0]
+
+for i in index:
+    if 0<= i<len(list):
+        list.pop(i)
+    else:
+        print("out of range")
+print(list)
+
+output--
+
+enter valuered
+enter valuegreen
+enter valuewhite
+enter valueblack
+enter valuepink
+enter valueyello
+['red', 'green', 'white', 'black', 'pink', 'yello']
+['green', 'white', 'black']
+
+
+13)Write a Python program to generate a 3*4*6 3D array whose each element is *. 
+
+import array as arr
+for i in range(3):
+    for j in range(4):
+        for k in range(6):
+            print("*",end=" ")
+        print()
+    print()
+
+solution--
+* * * * * * 
+* * * * * *
+* * * * * *
+* * * * * *
+
+* * * * * *
+* * * * * *
+* * * * * *
+* * * * * *
+
+* * * * * *
+* * * * * *
+* * * * * *
+* * * * * *
+
+14) Write a Python program to print the numbers of a specified list after removing even numbers from it. 
+list=[]
+for i in range(5):
+    n=int(input("enter value: "))
+    list.append(n)
+
+new_list=[]
+for i in list:
+    if i%2==0:
+        new_list.append(i)
+print(new_list)
+
+output--
+enter value: 1
+enter value: 2
+enter value: 3
+enter value: 4
+enter value: 5
+[2, 4]
+
+15)Write a Python program to shuffle and print a specified list. 
+import random
+list=[]
+for i in range(5):
+    n=int(input("enter value: "))
+    list.append(n)
+
+print(list)
+random.shuffle(list)
+print(list)
+
+output--
+
+enter value: 1
+enter value: 2
+enter value: 3
+enter value: 4
+enter value: 5
+[1, 2, 3, 4, 5]
+[1, 2, 4, 5, 3]
+
+16)Write a Python program to generate and print a list of first and last 5 elements where the values are square of numbers between 1 and 30 (both included). 
+
+list=[x**2 for x in range(1,31)]
+
+first_n=list[:5]
+last_n=list[-5:]
+
+print(first_n,last_n)
+
+output--
+[1, 4, 9, 16, 25] [676, 729, 784, 841, 900]
+
+17)Write a Python program to generate and print a list except for the first 5 elements, where the values are square of numbers between 1 and 30 (both included). 
+
+list=[x**2 for x in range(1,31)]
+
+r=list[5:]
+print(r)
+
+18)Write a Python program to generate all permutations of a list in Python. 
+
+import itertools
+list_n=[x for x in range(3)]
+
+p=list(itertools.permutations(list_n))
+
+for i in p:
+    print(i)
+
+output--
+(0, 1, 2)
+(0, 2, 1)
+(1, 0, 2)
+(1, 2, 0)
+(2, 0, 1)
+(2, 1, 0)
+
+
+19)Write a Python program to get the difference between the two lists. 
+
+list_n=[1,2,3]
+list_m=[3,4,5]
+result=[x for x in list_n if x not in list_m]
+print(result)
+
+output--
+
+[1, 2]
+
+20)Write a Python program access the index of a list. 
+my_list=["mango","cherry","strawberry","pears"]
+
+for index,val in enumerate(my_list):
+    print(f"{index}\t{val}")
+
+a="pears"
+if a in my_list:
+    index=my_list.index(a)
+    print(f"{a} at index {index}")
+else:
+    print("not")
+output--
+0       mango
+1       cherry
+2       strawberry
+3       pears
+pears at index 3
+
+
+21)Write a Python program to convert a list of characters into a string. 
+          
+list=['h','e','l','l','o']
+char_str=''.join(list)
+print(char_str)
+          
+
+output--
+hello
+
+22)Write a Python program to find the index of an item in a specified list. 
+
+list=["mansi","manu","ketan","priya","manav"]
+a="manu"
+
+index=list.index(a)
+print(f"{a} at index {index}")
+
+output--
+manu at index 1
+
+23)Write a Python program to flatten a shallow list. 
+
+
+def flatten_list(input_list):
+    f=[]
+    for i in input_list:
+        if isinstance(i,list):
+            f.extend(flatten_list(i))
+        else:
+            f.append(i)
+    return f
+
+
+
+
+
+shallow_list=[1,[2,3],[4,[5,6]],7]
+
+flat_list=flatten_list(shallow_list)
+print(flat_list)
+
+24)Write a Python program to append a list to the second list. 
+list1=["mansi","manu","ketan"]
+list2=["manav","anurag"]
+
+list1.extend(list2)
+print(list1)
+
+output--
+['mansi', 'manu', 'ketan', 'manav', 'anurag']
+
+25)Write a Python program to select an item randomly from a list. 
+import random
+list1=["mansi","manu","ketan"]
+
+rand=random.choice(list1)
+print(rand)
+
+output--
+mansi
+
+26)Write a python program to check whether two lists are circularly identical. 
+
+solution--
+def circularlist(list1, list2):
+    if len(list1) != len(list2):
+        return False
+
+    list2_str = ''.join(map(str, list2))  # Convert list2 to a string
+    list2_str += list2_str  # Double the string by concatenating it with itself
+
+    list1_str = ''.join(map(str, list1))  # Convert list1 to a string
+
+    return list1_str in list2_str
+
+list1 = [1, 2, 3, 4, 5]
+list2 = [4, 5, 1, 2, 3]
+
+if circularlist(list1, list2):
+    print("yes")
+else:
+    print("no")
+
+output--
+
+yes
+
+27) Write a Python program to find the second smallest number in a list. 
+
+solution--
+list=[140,23,73,4,35]
+for i in range(len(list)):
+    for j in range(len(list)-1):
+        if list[j]>list[j+1]:
+            temp=list[j]
+            list[j]=list[j+1]
+            list[j+1]=temp
+print(list)
+print(list[1])
+
+output--
+[4, 23, 35, 73, 140]
+23
+
+28)Write a Python program to find the second largest number in a list. 
+solution--
+list=[140,23,73,4,35]
+for i in range(len(list)):
+    for j in range(len(list)-1):
+        if list[j]<list[j+1]:
+            temp=list[j]
+            list[j]=list[j+1]
+            list[j+1]=temp
+print(list)
+
+print(list[1])
+
+solution--
+[140, 73, 35, 23, 4]
+73
+
+29)Write a Python program to get unique values from a list. 
+
+solution--
+
+list=[140,23,73,4,35,23]
+
+n=[]
+
+for i in list:
+    if i not in n:
+        n.append(i)
+
+print(n)
+
+output--
+[140, 23, 73, 4, 35]
+
+30)Write a Python program to get the frequency of the elements in a list. 
+solution--
+
+from collections import Counter
+list=[1,2,1,2,3,4,1,3]
+
+mylist=Counter(list)
+print(mylist)
+
+output--
+Counter({1: 3, 2: 2, 3: 2, 4: 1})
+
+31) Write a Python program to count the number of elements in a list within a specified range. 
+
+solution--
+list=[1,65,34,23,90,53,24]
+
+
+start=int(input("enter start range: "))
+end=int(input("enter end range: "))
+
+for i in list:
+    if i>=start and i<=end:
+        print(i)
+
+output--
+enter start range: 20
+enter end range: 30
+23
+24
+
+32)Write a Python program to check whether a list contains a sublist.
+
+solution--
+list=[1,65,34,23,90,53,24]
+
+sublist=[34,23,90]
+def substring(list,sublist):
+    for i in range(len(list)-len(sublist)+1):
+        if list[i:i+len(sublist)==sublist]:
+            return True
+    return False
+
+if substring:
+    print("yes it has")
+else:
+    print("no")    
+
+output--
+yes it has
+
+
+33)Write a Python program to generate all sublists of a list. 
+
+solution--
+def all_sublist(list1):
+    sub=[]
+    n=len(list1)
+    for i in range(n):
+        for j in range(i+1,n+1):   
+            sub.append(list1[i:j])
+    return sub
+
+my_list=[1,2,3]
+
+sublist=all_sublist(my_list)
+
+for i in sublist:
+    print(i)
+
+output--
+[1]
+[1, 2]
+[1, 2, 3]
+[2]
+[2, 3]
+[3]
+
+34)Write a Python program using Sieve of Eratosthenes method for computing primes upto a specified number. 
+
+solution--
+limit = 30
+sieve = [True] * (limit + 1)
+sieve[0] = sieve[1] = False
+
+for number in range(2, int(limit**0.5) + 1):
+    if sieve[number]:
+        for multiple in range(number**2, limit + 1, number):
+            sieve[multiple] = False
+
+primes = [num for num, is_prime in enumerate(sieve) if is_prime]
+
+print("Prime numbers up to", limit, "are:")
+print(primes)
+
+output--
+
+Prime numbers up to 30 are:
+[2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
+
+35)Write a Python program to create a list by concatenating a given list which range goes from 1 to n. 
+Sample list : ['p', 'q']
+n =5
+Sample Output : ['p1', 'q1', 'p2', 'q2', 'p3', 'q3', 'p4', 'q4', 'p5', 'q5']
+
+solution--
+list=['p','q']
+
+n=5
+
+res=[item + str(i) for i in range(1,n+1) for item in list]
+print(res)
+
+output--
+['p1', 'q1', 'p2', 'q2', 'p3', 'q3', 'p4', 'q4', 'p5', 'q5']
+
+
+
+36)Write a Python program to get variable unique identification number or string. 
+
+solution--
+num=10
+unique_id=id(num)
+
+print(unique_id)
+
+output-
+2288900899344
+
+37)Write a Python program to find common items from two lists. 
+solution--
+list1=[1,2,3,4,5]
+
+list2=[3,4,7,8]
+
+for i in list1:
+    for j in list2:
+        if i==j:
+            print(j)
+
+output--
+3
+4
+
+38)Write a Python program to change the position of every n-th value with the (n+1)th in a list. 
+Sample list: [0,1,2,3,4,5]
+Expected Output: [1, 0, 3, 2, 5, 4]
+
+solution--
+list1=[0,1,2,3,4,5]
+
+for i in range(0,len(list1)-1,2):
+    list1[i],list1[i+1]=list1[i+1],list1[i]
+
+print(list1)
+
+output--
+[1, 0, 3, 2, 5, 4]
+
+39)Write a Python program to convert a list of multiple integers into a single integer. 
+Sample list: [11, 33, 50]
+Expected Output: 113350
+
+solution--
+list1=[23,34,11]
+
+my=''.join(map(str,list1))
+
+my1=int(my)
+print(my1)
+
+output--
+233411
+
+40). Write a Python program to split a list based on first character of word. 
+solution--
+list1=["apple","banana","mango","pears"]
+
+m={i[0]:i for i in list1}
+print(m)
+
+output--
+
+{'a': 'apple', 'b': 'banana', 'm': 'mango', 'p': 'pears'}
+
+41). Write a Python program to create multiple lists. 
+
+solution--
+list1=[1,2,3,4,5]
+list2=["mansi","manu","ketan","manav","priya"]
+list3=[2.4,5.6,4.2,True,False]
+print(list1)
+print(list2)
+print(list3)
+
+output--
+[1, 2, 3, 4, 5]
+['mansi', 'manu', 'ketan', 'manav', 'priya']
+[2.4, 5.6, 4.2, True, False]
+
+
+42) Write a Python program to find missing and additional values in two lists. 
+
+solution--
+
+list1=[1,2,4,6]
+list2=[7,5,3,2]
+
+
+miss=[i for i in list1 if i not in list2]
+
+additional=[i for i in list2 if i not in list1]
+
+print("missing element: ",miss)
+print("additional element: ",additional)
+
+------------------------------------------------------------
+list1=[1,2,4,6]
+list2=[7,5,3,2]
+
+
+miss=set(list1)-set(list2)
+additional=set(list2)-set(list1)
+
+print("missing element: ",miss)
+print("additional element: ",additional)
+
+
+output--
+missing element:  [1, 4, 6]
+additional element:  [7, 5, 3]
+
+
+43). Write a Python program to split a list into different variables. 
+solution--
+mylist=["mansi",2,3.4,4,False]
+var1,var2,var3,var4,var5=mylist
+
+print(var1)
+print(var2)
+print(var3)
+print(var4)
+print(var5)
+
+output--
+mansi
+2
+3.4
+4
+False
+
+44)Write a Python program to generate groups of five consecutive numbers in a list. 
+
+solution--
+
+def generate_groups(start,end,grp):
+    r=[]
+    
+    for i in range(start,end-grp+2,grp):
+        g=list(range(i,i+grp))
+        r.append(g)
+    
+    return r
+
+start=1
+end=20
+grp=5
+
+k=generate_groups(start,end,grp)
+
+for i in k:
+    print(i)
+
+output--
+[1, 2, 3, 4, 5]
+[6, 7, 8, 9, 10]
+[11, 12, 13, 14, 15]
+[16, 17, 18, 19, 20]
+
+45)Write a Python program to convert a pair of values into a sorted unique array. 
+solution--
+list=[23,45,12,46,23,44]
+
+myli=sorted(set(list))
+print(myli)
+
+output--
+[12, 23, 44, 45, 46]
+
+46)Write a Python program to select the odd items of a list. 
+
+solution---
+list=[23,45,12,46,23,44]
+
+for i in list:
+    if i%2!=0:
+        print(i)
+
+output--
+23
+45
+23
+
+47)Write a Python program to insert an element before each element of a list. 
+
+solution--
+list=[23,45,12,46,23,44]
+
+for i in range(len(list)):
+    list[i]='mansi'+str(list[i])
+    
+print(list)
+
+output--
+['mansi23', 'mansi45', 'mansi12', 'mansi46', 'mansi23', 'mansi44']
+
+48)Write a Python program to print a nested lists (each list on a new line) using the print() function. 
+solution--
+list1=[23,45,[12,46],23,44,[4,4,2,],[4,32]]
+
+for i in list1:
+    print(i)
+
+output--
+23
+45
+[12, 46]
+23
+44
+[4, 4, 2]
+[4, 32]
+
+49). Write a Python program to convert list to list of dictionaries. 
+Sample lists: ["Black", "Red", "Maroon", "Yellow"], ["#000000", "#FF0000", "#800000", "#FFFF00"]
+Expected Output: [{'color_name': 'Black', 'color_code': '#000000'}, {'color_name': 'Red', 'color_code': '#FF0000'}, {'color_name': 'Maroon', 'color_code': '#800000'}, {'color_name': 'Yellow', 'color_code': '#FFFF00'}]
+
+
+solution--
+
+list1=["Black", "Red", "Maroon", "Yellow"]
+list2=["#000000", "#FF0000", "#800000", "#FFFF00"]
+
+listnew=[]
+for i,k in zip(list1,list2):
+    m={'color-name':i,'color-code':k}
+    listnew.append(m)
+print(listnew)
+
+output--
+[{'color-name': 'Black', 'color-code': '#000000'}, {'color-name': 'Red', 'color-code': '#FF0000'}, {'color-name': 'Maroon', 'color-code': '#800000'}, {'color-name': 'Yellow', 'color-code': '#FFFF00'}]
+
+50)Write a Python program to sort a list of nested dictionaries. 
+
+solution--
+
+list1=["Black", "Red", "Maroon", "Yellow"]
+list2=["#000000", "#FF0000", "#800000", "#FFFF00"]
+
+listnew=[]
+for i,k in zip(list1,list2):
+    m={'color-name':i,'color-code':k}
+    listnew.append(m)
+print(listnew)
+
+sorted_data=sorted(listnew,key=lambda x:x['color-name'])
+print(sorted_data)
+
+sorted_data1=sorted(listnew,key=lambda x:x['color-code'])
+print(sorted_data1)
+
+51)Write a Python program to split a list every Nth element. 
+solution--
+list=[1,2,3,4,5,6,7,8,23,233]
+
+n=3
+split_list=[list[i:i+n]for i in range(0,len(list),n)]
+print(split_list)
+
+output--
+[[1, 2, 3], [4, 5, 6], [7, 8, 23], [233]]
+
+52). Write a Python program to compute the similarity between two lists. 
+Sample data: ["red", "orange", "green", "blue", "white"], ["black", "yellow", "green", "blue"]
+Expected Output:
+Color1-Color2: ['white', 'orange', 'red']
+Color2-Color1: ['black', 'yellow']
+
+solution--
+list1=['red','orange','green','blue','white']
+list2=['black','yellow','green','blue']
+
+n1=set(list1)-set(list2)
+print(n1)
+
+n2=set(list2)-set(list1)
+print(n2)
+
+53)Write a Python program to create a list with infinite elements. 
+
+solution--
+
+list1=[]
+
+i=1
+while i!=0:
+    i=int(input("enter value: "))
+    if i!=0:
+        list1.append(i)
+    
+print(list1)
+
+output--
+enter value: 1
+
+enter value: 2
+
+enter value: 3
+
+enter value: 4
+
+enter value: 0
+[1, 2, 3, 4]
+
+54). Write a Python program to concatenate elements of a list. 
+
+solution--
+list1=['hello','i','am ','mansi']
+
+new=' '.join(list1)
+print(new)
+
+output--
+hello i am  mansi
+
+55)Write a Python program to remove key values pairs from a list of dictionaries. 
+
+solution--
+list1=['hello','i','am ','mansi']
+
+list2=[1,2,3,4,5]
+
+m={key:value for (key,value) in zip(list2,list1)}
+print(m)
+
+m.pop(1)
+print(m)
+
+output--
+{1: 'hello', 2: 'i', 3: 'am ', 4: 'mansi'}
+{2: 'i', 3: 'am ', 4: 'mansi'}
+
+
+56)Write a Python program to convert a string to a list. 
+solution--
+str='mansi agarwal'
+mylist=list(str)
+
+print(mylist)
+output--
+['m', 'a', 'n', 's', 'i', ' ', 'a', 'g', 'a', 'r', 'w', 'a', 'l']
+
+
+57)Write a Python program to check whether all items of a list is equal to a given string. 
+solution--
+
+list1 = [1, 2, 3, 4]
+str1 = '1234'
+
+if ''.join(map(str,list1))==str1:
+    print("yes")
+else:
+    print("no")
+
+output--
+yes
+
+58)Write a Python program to replace the last element in a list with another list. 
+
+solution---
+list1 = [1, 2, 3, 4]
+
+list2=['mansi','manu']
+
+list1[-1:]=list2
+print(list1)
+
+output--
+[1, 2, 3,'mansi', 'manu']
+
+59)Write a Python program to check whether the n-th element exists in a given list. 
+
+solution--
+list1 = [1, 2, 3, 4]
+n=int(input("enter index: "))
+
+len1=len(list1)
+
+if n<len1:
+    print("exist")
+else:
+    print("not exist")
+    
+output--
+
+enter index: 3
+exist
+
+
+60)Write a Python program to find a tuple, the smallest second index value from a list of tuples. 
+solution--
+list1=[(1,2),(3,4),(0,8)]
+
+r=min(list1,key=lambda x:x[1])
+print(r)
+
+
+output--
+(1,2)
+
+61)Write a Python program to create a list of empty dictionaries. 
+solution--
+n=5
+
+dict=[{} for i in range(n)]
+print(dict)
+
+output--
+[{}, {}, {}, {}, {}]
+
+62)Write a Python program to print a list of space-separated elements. 
+solution--
+list1=['mansi','manu','ketan','manav']
+
+r=' '.join(list1)
+print(r)
+
+output--
+mansi manu ketan manav
+
+63)Write a Python program to insert a given string at the beginning of all items in a list. 
+Sample list : [1,2,3,4], string : emp
+Expected output : ['emp1', 'emp2', 'emp3', 'emp4']
+
+solution--
+list1=[1,2,3,4]
+
+length=len(list1)
+for i in range(length):
+    list1[i]='emp'+ str(list1[i])
+
+print(list1)
+
+output--
+
+
+['emp1', 'emp2', 'emp3', 'emp4']
+
+64)Write a Python program to iterate over two lists simultaneously. 
+
+solution--
+list1=[1,2,3,4]
+
+list2=['mansi','manu','ketan','priya']
+
+m={key:value for (key,value) in zip(list1,list2)}
+print(m)
+
+
+65)Write a Python program to access dictionary keys element by index. 
+
+solution--
+list1=[1,2,3,4]
+
+list2=['mansi','manu','ketan','priya']
+
+m={key:value for (key,value) in zip(list1,list2)}
+print(m)
+
+keys=m.keys()
+print(keys)
+
+for i,k in enumerate(keys):
+    print(i,k)
+
+output--
+{1: 'mansi', 2: 'manu', 3: 'ketan', 4: 'priya'}
+dict_keys([1, 2, 3, 4])
+0 1
+1 2
+2 3
+3 4
+
+
+66)Write a Python program to find the list in a list of lists whose sum of elements is the highest. 
+Sample lists: [1,2,3], [4,5,6], [10,11,12], [7,8,9]
+Expected Output: [10, 11, 12]
+
+solution--
+
+list=[[1,2,3],[4,5,6],[7,8,9]]
+
+sum1=0
+max_sum=0
+
+new_list=[]
+for i in list:
+    sum1=sum(i)
+    if sum1>max_sum:
+        max_sum=sum1
+        newlist=i
+
+print(newlist)
+
+output--
+[7, 8, 9]
+
+67)Write a Python program to find all the values in a list are greater than a specified number. 
+
+solution--
+
+list=[23,45,12,54,21]
+
+n=int(input("enter value: "))
+
+for i in list:
+    if i>n:
+        print(i)
+
+output--
+enter value: 20
+23
+45
+54
+21
+
+68)Write a Python program to extend a list without append. 
+Sample data: [10, 20, 30]
+[40, 50, 60]
+Expected output : [40, 50, 60, 10, 20, 30]
+
+solution--
+list1=[23,45,12,54,21]
+list2=[1,2,3]
+
+list1.extend(list2)
+print(list1)
+
+output--
+
+[23, 45, 12, 54, 21, 1, 2, 3]
+
+69)Write a Python program to remove duplicates from a list of lists. 
+Sample list : [[10, 20], [40], [30, 56, 25], [10, 20], [33], [40]]
+New List : [[10, 20], [30, 56, 25], [33], [40]]
+
+solution--
+
+
+list1=[[10, 20], [40], [30, 56, 25], [10, 20], [33], [40]]
+
+tuple1=[tuple(i)for i in list1]
+list2=set(tuple1)
+print(list2)
+
+output--
+{(40,), (33,), (30, 56, 25), (10, 20)}
+
+70)Write a Python program to get the depth of a dictionary. 
+
+solution--
+
+
+71)Write a Python program to check whether all dictionaries in a list are empty or not. 
+Sample list : [{},{},{}]
+Return value : True
+Sample list : [{1,2},{},{}]
+Return value : False
+
+solution--
+def check(lis):
+    return all(not d for d in lis)
+
+
+list1=[{},{},{}]
+list2=[{1,2},{},{}]
+
+r=check(list1)
+r2=check(list2)
+
+print(r)
+print(r2)
+
+outout--
+True
+False
+
+72)Write a Python program to flatten a given nested list structure. 
+Original list: [0, 10, [20, 30], 40, 50, [60, 70, 80], [90, 100, 110, 120]]
+Flatten list:
+[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120]
+
+solution--
+def flat(li):
+    n=[]
+    for i in li:
+        if isinstance(i, list):
+            n.extend(flat(i))
+            
+        else:
+            d=n.append(i)
+    return n
+original_list = [0, 10, [20, 30], 40, 50, [60, 70, 80], [90, 100, 110, 120]]
+
+
+f=flat(original_list)
+print(f)
+
+output--
+[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120]
+
+73)Write a Python program to remove consecutive duplicates of a given list. 
+Original list:
+[0, 0, 1, 2, 3, 4, 4, 5, 6, 6, 6, 7, 8, 9, 4, 4]
+After removing consecutive duplicates:
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 4]
+
+solution--
+
+list1=[0, 0, 1, 2, 3, 4, 4, 5, 6, 6, 6, 7, 8, 9, 4, 4]
+
+my=set(list1)
+
+print(my)
+
+74)Write a Python program to pack consecutive duplicates of a given list elements into sublists. 
+Original list:
+[0, 0, 1, 2, 3, 4, 4, 5, 6, 6, 6, 7, 8, 9, 4, 4]
+After packing consecutive duplicates of the said list elements into sublists:
+[[0, 0], [1], [2], [3], [4, 4], [5], [6, 6, 6], [7], [8], [9], [4, 4]]
+
+solution--
+from itertools import groupby
+
+list1=[0, 0, 1, 2, 3, 4, 4, 5, 6, 6, 6, 7, 8, 9, 4, 4]
+
+p=[list(group) for key,group in groupby(list1)]
+print(p)
+
+75)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
