@@ -20,3 +20,8 @@ hello This is a sample question.
 hello      it is used to remove 
 hello        indentation from 
 hello   specific lines
+
+
+29)Write a Python program to set the indentation of the first line. 
+
+30)

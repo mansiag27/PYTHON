@@ -1,0 +1,9 @@
+31)Write a Python program to print the following floating numbers with no decimal places. 
+
+solution--
+num=float(input("enter float value"))
+print('{:.0f}'.format(num))
+
+output--
+enter float value2.345
+2
