@@ -1,0 +1,14 @@
+20)Write a Python function to reverses a string if it's length is a multiple of 4. 
+
+solution--
+
+str1=input("enter a string: ")
+
+if len(str1)%2==0:
+    print(str1[::-1])
+else:
+    print("string length is not multiple of 4")
+
+output--
+enter a string: manu
+unam

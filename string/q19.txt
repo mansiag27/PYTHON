@@ -1,0 +1,13 @@
+19)Write a Python program to get the last part of a string before a specified character. 
+https://www.w3resource.com/python-exercises
+https://www.w3resource.com/python
+
+solution--
+
+str1="https://www.w3resource.com/python-exercises"
+
+
+for i in str1:
+    if i == '-':
+        break
+    print(i,end='')

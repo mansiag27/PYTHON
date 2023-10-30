@@ -1,0 +1,13 @@
+
+22)Write a Python program to sort a string lexicographically. 
+
+output-
+str1=input("enter a string: ")
+
+new=''.join(sorted(str1))
+print(new)
+
+output--
+
+enter a string: pythonprogramming
+agghimmnnoopprrty

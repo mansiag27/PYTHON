@@ -1,0 +1,20 @@
+21)Write a Python function to convert a given string to all uppercase if it contains at least 2 uppercase characters in the first 4 characters. 
+
+solution--
+str1=input("enter a string: ")
+count=0
+new=str1[:4]
+for i in new:
+    n=ord(i)
+    if (n>=65 and n<=90):
+        count+=1
+
+
+if count>=2:
+    print(str1.upper())
+else:
+    print("not contain more than 2 upper case in start four character")
+        
+output--
+enter a string: MaNsiagarwal
+MANSIAGARWAL
