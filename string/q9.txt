@@ -1,0 +1,17 @@
+9) Write a Python program to remove the nth index character from a nonempty string. 
+
+solution--
+str1=input("enter string: ")
+n=int(input("enter index: "))
+
+for i in range(len(str1)):
+    if i==n:
+        continue
+    else:
+        print(str1[i],end="")
+                   
+output--
+enter string: mansi
+
+enter index: 2
+masi

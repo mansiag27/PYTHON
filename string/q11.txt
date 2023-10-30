@@ -1,0 +1,13 @@
+11)Write a Python program to remove the characters which have odd index values of a given string. 
+
+solution--
+str1='mansiagarwal'
+
+for i in range(len(str1)):
+    if i%2!=0:
+        continue
+    else:
+        print(str1[i],end="")
+
+output--
+mnigra

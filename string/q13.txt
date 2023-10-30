@@ -1,0 +1,11 @@
+13)Write a Python script that takes input from the user and displays that input back in upper and lower cases. 
+
+solution--
+
+str2=input("enter value: ")
+str1=str2.swapcase()
+print(str1)
+        
+output--
+enter value: MANSI
+mansi

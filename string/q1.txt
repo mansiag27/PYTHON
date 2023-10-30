@@ -1,0 +1,14 @@
+1) Write a Python program to calculate the length of a string. 
+
+solution--
+
+
+str=input("enter string: ")
+n=0
+for ch in str:
+    n+=1
+    
+print(n)
+
+output--
+5

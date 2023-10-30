@@ -1,0 +1,19 @@
+14)Write a Python program that accepts a comma separated sequence of words as input and prints the unique words in sorted form (alphanumerically). 
+Sample Words : red, white, black, red, green, black
+Expected Result : black, green, red, white,red
+
+solution--
+
+str1=[]
+n=int(input("enter length: "))
+for i in range(n):
+    val=input("enter value: ")
+    str1.append(val)
+    
+print(str1)
+str2=[]
+for i in str1:
+    if i not in str2:
+        str2.append(i)
+
+print(str2)

@@ -1,0 +1,22 @@
+12)Write a Python program to count the occurrences of each word in a given sentence. 
+
+solution--
+str2='i am mansi agarwal i am'
+
+str1=str2.lower().split()
+new={}
+for i in str1:
+        if i in new:
+            new[i]+=1
+        else:
+            new[i]=1
+
+for i,k in new.items():
+    print(f'{i}:{k}')
+
+output--
+['i', 'am', 'mansi', 'agarwal', 'i', 'am']
+i:2
+am:2
+mansi:1
+agarwal:1

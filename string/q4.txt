@@ -1,0 +1,19 @@
+#string is immutable
+4) Write a Python program to get a string from a given string where all occurrences of its first char have been changed to '$', except the first char itself. 
+Sample String : 'restart'
+Expected Result : 'resta$t'
+
+soluton--
+
+str1=input("enter string: ")
+
+n=input("enter value to replace: ")
+
+
+first=str1.find(n)
+print(first)
+
+if first!=-1:
+    modified=(str1[:first]+n+str1[first+1:].replace(n, '$'))
+    
+print(modified)

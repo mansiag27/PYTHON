@@ -1,0 +1,250 @@
+Assignment day--9
+
+1) store marks of 5 subjectshere use marks as actual data and subject names as indexes accept both marks and subjects from the user.
+
+solution--
+
+import pandas as pd
+list1=['maths','science','english','sst','hindi']
+list2=[78,76,54,67,89]
+
+mydict={key:value for (key,value) in zip(list1,list2)}
+
+myseries=pd.Series(mydict)
+
+print(myseries)
+
+output--
+maths      78
+science    76
+english    54
+sst        67
+hindi      89
+dtype: int64
+
+2)create dictionary to store player name and runs scored of at least 5 players. Display it. Now convert this dictionary ‌into Series object and print it.
+
+solution--
+import pandas as pd
+list1=['sachin','virat','sehvag','rohit','uv']
+list2=[23,45,12,45,16]
+
+m={key:value for(key,value)in zip(list1,list2)}
+
+myse=pd.Series(m)
+
+print(myse)
+
+output--
+sachin    23
+virat     45
+sehvag    12
+rohit     45
+uv        16
+dtype: int64
+
+3) accept 10 values and store them in the Series. Now perform following operations:
+
+a) display the entire Series
+b) extract 3rd element
+c) extract elements from 4 to 7
+d) extract elements from fourth last till the last element
+e) extract first 3 elements
+f) extract elements from the 5th position
+
+solution--
+import pandas as pd
+
+list1=[i for i in range(1,10)]
+
+my=pd.Series(list1)
+
+print(my)
+print("3rd element")
+print(my.loc[3])
+
+print(" extract elements from 4 to 7")
+print(my.iloc[4:8])
+
+print("elements from fourth last till the last element")
+print(my.iloc[-4:])
+
+print(" first 3 elements")
+print(my.iloc[:3])
+
+print("elements from the 5th position")
+print(my.iloc[5:])
+
+output--
+0    1
+1    2
+2    3
+3    4
+4    5
+5    6
+6    7
+7    8
+8    9
+dtype: int64
+3rd element
+4
+ extract elements from 4 to 7
+4    5
+5    6
+6    7
+7    8
+dtype: int64
+elements from fourth last till the last element
+5    6
+6    7
+7    8
+8    9
+dtype: int64
+ first 3 elements
+0    1
+1    2
+2    3
+dtype: int64
+elements from the 5th position
+5    6
+6    7
+7    8
+8    9
+dtype: int64
+
+4) accept 5 values in a Series and perform the following operations:
+	a) display their sum
+	b) add the value accepted from the user
+	c) subtract the value accepted from the user
+	d) multiply the value accepted from the user
+	e) add the value accepted from the user
+
+solution--
+import pandas as pd
+
+list1=[i for i in range(1,6)]
+
+my=pd.Series(list1)
+print(my)
+print(my.sum())
+n=int(input("enter value:"))
+print(my.subtract(n))
+print(my.mul(n))
+print(my.add(n))
+
+output--
+
+0    1
+1    2
+2    3
+3    4
+4    5
+dtype: int64
+15
+
+enter value:4
+0   -3
+1   -2
+2   -1
+3    0
+4    1
+dtype: int64
+0     4
+1     8
+2    12
+3    16
+4    20
+dtype: int64
+0    5
+1    6
+2    7
+3    8
+4    9
+dtype: int64
+
+----------------------------DATA FRAME------------------------------------------------------
+
+5)accept 5 names,designations and salaries and display them with DataFrame.
+
+solution--
+import pandas as pd
+
+name=['mansi','manu','manav','ketan','priya']
+desig=['analyst','dev','network-eng','database','teacher']
+sal=[1000,2500,3000,5000,4500]
+
+new=[]
+for i,k,l in zip(name,desig,sal):
+    m={'name':i,'designation:':k,'sal':l}
+    new.append(m)
+
+df=pd.DataFrame(new)
+print(df)
+    
+output--
+    name designation:   sal
+0  mansi      analyst  1000
+1   manu          dev  2500
+2  manav  network-eng  3000
+3  ketan     database  5000
+4  priya      teacher  4500
+
+6)create a csv file (with whatever columns and rows you want) manually and then read using pandas.
+
+solution--
+
+import pandas as pd
+
+list1=[1,2,3,4,5]
+list2=['mansi','manu','ketan','manav']
+
+m={key:value for (key,value) in zip(list1,list2)}
+
+my=pd.Series(m)
+print(my)
+my.to_csv("C:\\Users\\hrsht\\Desktop\\all\\work\\Oops_assign\\my.csv")
+
+new=pd.read_csv("C:\\Users\\hrsht\\Desktop\\all\\work\\Oops_assign\\my.csv")
+
+output--
+1    mansi
+2     manu
+3    ketan
+4    manav
+dtype: object
+
+7)create "Vita.xlsx" using pandas. In this Excel file you have to create 2 sheets "DBDA", and "DAC". 
+in each sheet you have to write name,address and age of all the team leaders.
+make sure Excel file gets created successfully.
+
+solution--
+import pandas as pd
+
+list1=[23,23,21,24,25]
+list2=['mansi','manisha','shubhangi','uma','anchal']
+new=[]
+for i,k in zip(list1,list2):
+    m={'name':i,'age':k}
+    new.append(m)
+
+d1=pd.DataFrame(new)
+
+list3=[23,34,22,21,18]
+list4=['tripti','raghav','aditya','sapnil','jagriti']
+
+new2=[]
+for i,k in zip(list3,list4):
+    m={'name':i,'age':k}
+    new2.append(m)
+    
+d2=pd.DataFrame(new2)
+
+with pd.ExcelWriter("C:\\Users\\hrsht\\Desktop\\all\\work\\Oops_assign\\work.xlsx") as mywriter:
+    d1.to_excel(mywriter,sheet_name = "dbda")
+    d2.to_excel(mywriter,sheet_name = "dac")
+
+
+
+ 
+
+

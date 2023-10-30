@@ -1,0 +1,18 @@
+8)Write a Python function that takes a list of words and returns the length of the longest one. 
+
+solution--
+"""
+k=""
+def long_word(list1):
+    for i in list1:
+        max=len(list1[0])
+        if len(i)>max:
+            max=len(i)
+            k=i
+    return k
+     
+    
+list1=["mansiagarwal","mansi","manishajhadavhgxs","manu","harshit"]
+
+ans=long_word(list1)
+print(ans)

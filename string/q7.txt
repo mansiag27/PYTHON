@@ -1,0 +1,20 @@
+
+7)Write a Python program to find the first appearance of the substring 'not' and 'poor' from a given string, if 'not' follows the 'poor', replace the whole 'not'...'poor' substring with 'good'. Return the resulting string. 
+Sample String : 'The lyrics is not that poor!'
+'The lyrics is poor!'
+Expected Result : 'The lyrics is good!'
+'The lyrics is poor!'
+
+solution--
+
+str1=input("enter string: ")
+
+not_index=str1.find('not')
+poor_index=str1.find('poor')
+
+if not_index!=-1 and poor_index!=-1 and not_index<poor_index:
+    result=str1[:not_index]+'good'+str1[poor_index+4:]
+else:
+    result=str1
+
+print(result)
