@@ -1,0 +1,10 @@
+23)Write a Python program to remove a newline in Python. 
+
+solution--
+
+str1="i am mansi\n i am btech\n student"
+new=str1.replace('\n', "")
+print(new)
+
+output--
+i am mansi i am btech student

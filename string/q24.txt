@@ -1,0 +1,11 @@
+24)Write a Python program to check whether a string starts with specified characters. 
+
+solution--
+str1="mansiagarwal"
+
+n=input("enter a character: ")
+
+if str1[0]==n:
+    print("yes it start with specified character")
+else:
+    print("no")
