@@ -1,0 +1,29 @@
+47)Write a Python program to lowercase first n characters in a string. 
+    
+solution--
+str1="MANSI AGARWAL"
+
+n=int(input("enter index: "))
+
+n1=[]
+for i in range(len(str1)):
+    if i<=n:
+        n1.append(str1[i])
+        
+num1=''.join(n1)
+
+mystr=num1.casefold()
+
+
+n2=[]
+for i in range(len(str1)):
+    if i>n:
+        n2.append(str1[i])
+num3=''.join(n2)
+
+ans=mystr+num3
+print(ans)
+
+output--
+enter index: 7
+mansi agARWAL

@@ -1,0 +1,18 @@
+45)Write a Python program to check if a string contains all letters of the alphabet. 
+
+solution--
+str1="abcdefgAijklmnopqrstuvwxyz"
+
+for i in str1:
+    n=ord(i)
+    if (n>=65 and n<=90):
+        print("yes it contain all alphabets A-Z")
+        break
+    if (n>=97 and n<=122):
+        print("yes it contains all alphabets a-z")
+        break
+    else:
+        print("not present")
+
+output--
+yes it contains all alphabets a-z
