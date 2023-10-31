@@ -1,0 +1,24 @@
+Beautiful soup--
+
+1)
+import requests
+from bs4 import BeautifulSoup
+
+url = 'https://www.w3schools.com/'
+response = requests.get(url)
+# Parse the HTML content using Beautiful Soup.
+soup = BeautifulSoup(response.text, 'html.parser')
+# Extract and print the text content without HTML tags.
+print(soup.get_text())
+
+
+
+"""
+print the content of w3school without html tags
+soup = BeautifulSoup(response.text, 'html.parser')
+
+reponse.text-->contail data with html tags and we pass "html.parser" as argument specifies the parser to be used for parsing the HTML content.
+
+The get_text() method in Beautiful Soup is used to extract the text content from a parsed HTML or XML document, while ignoring any HTML tags and attributes. 
+
+"""

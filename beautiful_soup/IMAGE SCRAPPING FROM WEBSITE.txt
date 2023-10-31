@@ -1,0 +1,97 @@
+# IMAGE SCRAPPING FROM WEBSITE
+
+1)
+import requests
+from bs4 import BeautifulSoup
+
+url = 'https://www.w3schools.com/'
+response = requests.get(url)
+
+#parsed the HTML content using beautiful soup
+soup = BeautifulSoup(response.text, 'html.parser')
+
+#find all 'img' elements in the parsed HTML 
+images=soup.find_all('img')
+print(images)
+
+
+output--
+[<img alt="A circular color wheel showing the gradation of colors in the spectrum" class="w3-hide-medium" loading="lazy" src="/images/colorpicker2000.png"
+
+
+'''
+in form of tags
+
+we cannot extract images from tag...so we neet src of image
+'''
+
+
+2)
+import requests
+from bs4 import BeautifulSoup
+
+url = 'https://www.w3schools.com/'
+response = requests.get(url)
+
+#parsed the HTML content using beautiful soup
+soup = BeautifulSoup(response.text, 'html.parser')
+
+#find all 'img' elements in the parsed HTML 
+images=soup.find_all('img')
+
+images_urls=[img['src']for img in images]
+for i in images_urls:
+    print(i)
+
+output--
+/images/colorpicker2000.png
+/signup/lynxlogo.svg
+codeeditor.gif
+/tryit/best2.gif
+/spaces/dynamicspaces.gif
+how-spaces-works3.png
+myl-green-off.png
+
+'''
+images contail all the tags with contain 'img'
+but we want src to downloade imag so we use
+images_urls=[img['src']for img in images]
+for i in images_urls:
+    print(i)
+
+we get src of image
+'''
+
+3)
+import requests
+
+from bs4 import BeautifulSoup
+from tqdm import tqdm
+from urllib.parse import urljoin
+
+r=requests.get("https://en.wikipedia.org/wiki/Minions_(Despicable_Me)")
+
+# Parsing the HTML
+soup = BeautifulSoup(r.content, 'html.parser')
+ 
+imgs=soup.find_all("img")
+
+directory='C:\\Users\\hrsht\\Desktop\\all\\work\\Oops_assign\\myimages'
+#for img in tqdm(imgs):   # for the purpose of showing progress bar while downloading
+for img in tqdm(imgs):
+    # img.attrs is a dictionary with 'src' as a key and the image link is a value
+    imglink=img.attrs.get("src")
+    # to get the binary form of an image
+    absolute_url = urljoin(r.url, imglink)
+    image=requests.get(absolute_url).content  
+    
+    filename=directory+imglink[imglink.rfind('/'):]
+    with open(filename,"wb") as f:
+       f.write(image) 
+print("done")
+
+
+
+
+
+

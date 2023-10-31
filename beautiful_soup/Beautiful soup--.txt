@@ -1,0 +1,5 @@
+Beautiful soup--
+
+Beautiful Soup is a popular Python library used for web scraping and parsing HTML and XML documents. It provides a convenient way to navigate and search through the elements of a web page, extract data, and perform various tasks related to web scraping.
+
+from bs4 import BeautifulSoup

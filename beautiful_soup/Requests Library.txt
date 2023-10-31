@@ -1,0 +1,32 @@
+Requests Library:
+requests is a Python library used for making HTTP requests to interact with web resources, such as websites and web services. It allows you to send HTTP GET and POST requests, handle responses, and manage cookies and sessions.
+
+GET: Used to retrieve data from a specified resource. In web browsers, when you enter a URL and press Enter, a GET request is sent to the server to fetch the web page.
+
+POST: Used to send data to be processed to a specified resource. It's often used for submitting form data to a server, such as when you fill out a web form.
+
+PUT: Used to update a resource or create a new one if it doesn't exist.
+
+DELETE: Used to request the removal of a resource.
+
+In the requests library, you can use functions like requests.get(), requests.post(), requests.put(), and requests.delete() to send these types of requests to a specified URL. 
+
+
+1)
+import requests
+url="https://www.geeksforgeeks.org/"
+
+#make an HTTP request to the URL using 'requests'
+page=requests.get(url)
+
+print(page.text)
+
+
+2)
+import requests
+url="https://www.w3schools.com/"
+
+#make an HTTP request to the URL using 'requests'
+page=requests.get(url)
+
+print(page.text)
