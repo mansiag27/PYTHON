@@ -1,0 +1,63 @@
+Assignment 10
+
+1)create first array "overs" with 4 elements
+5,10,15,20
+create another array "runs_scored" with 4 elements and store
+no.of runs scored at the end of each over
+e.g.  40 runs at the end of 5th over , 75 runs at the end of 10th over etc.
+
+now create a line plot to show the relationship between "overs" and "runs_scored"
+solution--
+import numpy as np
+from matplotlib import  pyplot as plt
+over=[5,10,15,20]
+run=[40,75,115,200]
+
+over1=np.array(over)
+run1=np.array(run)
+
+m={key:value for (key,value)in zip(over1,run1)}
+new=np.array(m)
+
+print(new)
+plt.title("match score")
+plt.xlabel("over")
+plt.ylabel("run")
+plt.plot(over1,run1)
+
+2) create a Bar plot to show how many people like "Action","Romance","Comedy" or "Drama" movies.
+
+solution--
+
+import numpy as np
+from matplotlib import  pyplot as plt
+
+mydict={'action':20,'romance':30,'comedy':40,'Drama':10}
+
+profession=list(mydict.keys())
+people=list(mydict.values())
+
+plt.bar(profession,people)
+plt.xlabel("profession")
+plt.ylabel("people")
+plt.title("work")
+
+plt.show()
+
+3)create a piechart to show popularity of various modules (Java,Python etc.)
+
+solution--
+
+import numpy as np
+from matplotlib import  pyplot as plt
+
+mydict={'java':20,'python':30,'C':40,'C++':10}
+
+lang=list(mydict.keys())
+popular=list(mydict.values())
+
+plt.pie(popular,labels=lang,autopct='%0.1f%%')
+plt.legend()
+
+
+
