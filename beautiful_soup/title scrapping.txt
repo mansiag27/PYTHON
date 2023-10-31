@@ -1,0 +1,15 @@
+#title scrapping
+
+
+import requests
+from bs4 import BeautifulSoup
+
+URL = "https://en.wikipedia.org/wiki/Minions_(Despicable_Me)"
+page = requests.get(URL)
+soup=BeautifulSoup(page.text,'html.parser')
+s=soup.find_all('title')
+for i in s:
+    print(i)
+
+output--
+<title>Minions (Despicable Me) - Wikipedia</title>

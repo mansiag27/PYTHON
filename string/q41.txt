@@ -1,0 +1,15 @@
+
+41)Write a Python program to strip a set of characters from a string. 
+
+solution--
+str1="i am mansi agarwal"
+start=int(input("enter a start point"))
+end1=int(input("enter end point: "))
+for i in range(len(str1)):
+    if i>=start and i<=end1:
+        print(str1[i],end="")
+
+output--
+enter a start point3
+enter end point: 15
+m mansi agarw

@@ -1,0 +1,11 @@
+43)Write a Python program to print the square and cube symbol in the area of a rectangle and volume of a cylinder. 
+Sample output:
+The area of the rectangle is 1256.66cm2
+The volume of the cylinder is 1254.725cm3
+
+solution--
+l=int(input("enter length: "))
+b=int(input("enter breadth: "))
+area1=2*(l+b)
+ans=str(area1)+'cm^2'
+print(ans)

@@ -1,0 +1,27 @@
+38)38)Write a Python program to count occurrences of a substring in a string. 
+
+output--
+(method-1)
+str1=input("enter string: ")
+substring=input("enter string: ")
+c=str1.count(substring)
+print(c)
+
+output--
+enter string: majduhmahdbema
+enter string: ma
+3
+
+(method-2)
+str1=input("enter string: ")
+substring=input("enter string: ")
+length=len(substring)
+count=0
+
+for i in range(len(str1)):
+#sliding window
+    window=str1[i:i+length]
+    if window==substring:
+        count+=1
+   
+print("occurance of substring: ",count)

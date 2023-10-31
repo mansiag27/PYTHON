@@ -1,0 +1,27 @@
+#Scrap hyperlinks (http or https) and img
+
+import requests
+
+from bs4 import BeautifulSoup
+
+page=requests.get("https://www.rediff.com/movies")
+
+
+soup=BeautifulSoup(page.text,'html.parser')
+
+images=soup.find_all("img")
+print("No. of images are   ",images.__len__())
+print("\n")
+#print(images)
+
+anchors=soup.find_all("a")
+print("No. of anchors are  ",anchors.__len__())
+print("\n")
+#print(anchors)
+    
+print("Done")
+
+output--
+No. of images are    37
+No. of anchors are   126
+Done
