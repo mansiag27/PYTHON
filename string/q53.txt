@@ -1,0 +1,15 @@
+53)Write a Python program to find the first repeated character in a given string. 
+
+solution--
+from collections import Counter
+str1="mansiagarwal"
+mystr=Counter(str1)
+
+
+for i,k in mystr.items():
+    if k>1:
+        print("first repeated character: ",i)
+        break
+    
+output--
+first repeated character:  a

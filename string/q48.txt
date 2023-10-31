@@ -1,0 +1,10 @@
+48)Write a Python program to swap comma and dot in a string. 
+Sample string: "32.054,23"
+Expected Output: "32,054.23"
+
+solution--
+
+input1="32.054,23"
+
+new=input1.replace(',','TEMP').replace('.',',').replace('TEMP','.')
+print(new)

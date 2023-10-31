@@ -1,0 +1,31 @@
+49)Write a Python program to count and display the vowels of a given text. 
+
+solution--
+str1="mansi agarwal"
+a=e=k=o=u=0
+for i in str1:
+    if i=='a' :
+        a+=1
+    if i=='e':
+        e+=1
+    if i=='i':
+        k+=1
+    if i=='o':
+        o+=1
+    if i=='u':
+        u+=1
+
+print("Counts of vowels:")
+print("a:", a)
+print("e:", e)
+print("i:", i)
+print("o:", o)
+print("u:", u)
+
+output--
+Counts of vowels:
+a: 4
+e: 0
+i: l
+o: 0
+u: 0

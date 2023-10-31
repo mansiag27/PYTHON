@@ -1,0 +1,20 @@
+52)Write a Python program to print all permutations with given repetition number of characters of a given string. 
+
+solution--
+from itertools import product
+str1='abc'
+rep=2
+permutation=product(str1,repeat=rep)
+for i in permutation:
+    print(''.join(i))
+
+output--
+aa
+ab
+ac
+ba
+bb
+bc
+ca
+cb
+cc

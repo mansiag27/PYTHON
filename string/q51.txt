@@ -1,0 +1,16 @@
+51)Write a Python program to find the first non-repeating character in given string. 
+
+solution--
+from collections import Counter
+str1='i am mansi agarwal'
+
+new=Counter(str1)
+
+
+for i,k in new.items():
+    if k==1:
+        print("first non repeating character:",i)
+        break
+
+output--
+first non repeating character: n

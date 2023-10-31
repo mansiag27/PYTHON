@@ -1,0 +1,14 @@
+55)Write a Python program to find the first repeated word in a given string. 
+
+solution--
+
+input1="i am is am a girl"
+word=input1.split()
+seen=set()
+for i in word:
+    if i in seen:
+        print(i)
+    seen.add(i)
+
+ouput--
+am

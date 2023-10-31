@@ -1,0 +1,35 @@
+
+50)Write a Python program to split a string on the last occurrence of the delimiter. 
+
+solution--
+str1='I am mansi agarwal'
+
+print(str1)
+length=len(str1)
+new=''
+
+str_new=str1[::-1]
+
+
+
+for i in str_new:
+    if i==' ':
+         break
+    new+=i
+
+my1=new[::-1]
+
+j=str_new.find(' ')
+new2=''
+for i in range(j+1,len(str_new)):
+        new2+=str_new[i]
+
+my2=new2[::-1]
+
+print(my2)
+print(my1)
+        
+output--
+I am mansi agarwal
+I am mansi
+agarwal
