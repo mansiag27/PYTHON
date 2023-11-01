@@ -1,0 +1,22 @@
+17)Write a Python program to remove duplicates from Dictionary. 
+
+solution--
+
+product=['bag','pen','notbook','bottle']
+cost=[500,10,40,10]
+m={key:value for(key,value) in zip(product,cost)}
+unique={}
+for key,value in m.items():
+    if value not in unique.values():
+        unique[key]=value
+  
+print("original: ")
+print(m)
+print("without duplicates: ")
+print(unique)
+        
+output--
+original: 
+{'bag': 500, 'pen': 10, 'notbook': 40, 'bottle': 10}
+without duplicates: 
+{'bag': 500, 'pen': 10, 'notbook': 40}

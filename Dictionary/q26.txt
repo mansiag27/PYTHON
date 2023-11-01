@@ -1,0 +1,26 @@
+25) Write a Python program to print a dictionary in table format. 
+solution--
+from prettytable import PrettyTable
+list1=[1,2,3,4]
+list2=['mansi','manu','sejal','sonali']
+
+m={key:value for(key,value)in zip(list1,list2)}
+
+table=PrettyTable()
+table.field_names=['key','value']
+
+for i,k in m.items():
+    table.add_row([i,k])
+
+print(table)
+
+output--
+Output from spyder call 'get_var_properties':
++-----+--------+
+| key | value  |
++-----+--------+
+|  1  | mansi  |
+|  2  |  manu  |
+|  3  | sejal  |
+|  4  | sonali |
++-----+--------+

@@ -1,0 +1,13 @@
+16)Write a Python program to get a dictionary from an object's fields. 
+
+solution--
+
+class   Person:
+    def __init__(self,name,age):
+        self.name=name
+        self.age=age
+
+person=Person("Mansi",23)
+person_dict=vars(person)
+
+print(person_dict)

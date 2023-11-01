@@ -1,0 +1,18 @@
+21)Write a Python program to create and display all combinations of letters, selecting each letter from a different key in a dictionary. 
+Sample data : {'1':['a','b'], '2':['c','d']}
+Expected Output:
+ac
+ad
+bc
+bd
+
+solution--
+import itertools
+sample={'1':['a','b'],'2':['c','d']}
+list1=[]
+for i in itertools.product(*sample.values()):
+    list1.append("".join(i))
+print(list1)
+
+output--
+['ac', 'ad', 'bc', 'bd']

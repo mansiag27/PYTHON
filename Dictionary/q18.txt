@@ -1,0 +1,33 @@
+18)Write a Python program to check a dictionary is empty or not. 
+
+solution--
+product=['bag','pen','notbook','bottle']
+cost=[500,10,40,10]
+m={key:value for(key,value) in zip(product,cost)}
+new={}
+if len(m)<1:
+    print("empty")
+else:
+    print("not empty")
+
+output--
+not empty
+
+19) Write a Python program to combine two dictionary adding values for common keys. 
+d1 = {'a': 100, 'b': 200, 'c':300}
+d2 = {'a': 300, 'b': 200, 'd':400}
+Sample output: Counter({'a': 400, 'b': 400, 'd': 400, 'c': 300})
+
+solution--
+mydict1={'a':1,'b':2}
+mydict2={'c':3,'d':4}
+new={}
+
+new.update(mydict1)
+new.update(mydict2)
+print(new)
+
+output--
+{'a': 1, 'b': 2, 'c': 3, 'd': 4}
+
+20)

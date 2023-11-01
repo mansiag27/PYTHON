@@ -1,0 +1,10 @@
+13) Write a Python program to map two lists into a dictionary
+
+solution--
+product=['bag','pen','notbook']
+cost=[500,10,40]
+m={key:value for(key,value) in zip(product,cost)}
+print(m)
+
+solution--
+{'bag': 500, 'pen': 10, 'notbook': 40}

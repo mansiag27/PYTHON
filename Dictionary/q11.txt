@@ -1,0 +1,13 @@
+11)Write a Python program to remove a key from a dictionary.
+ 
+solution--
+product=['bag','pen','notbook']
+cost=[500,10,40]
+m={key:value for(key,value) in zip(product,cost)}
+print(m)
+m.pop('pen')
+print(m)
+
+output--
+{'bag': 500, 'pen': 10, 'notbook': 40}
+{'bag': 500, 'notbook': 40}

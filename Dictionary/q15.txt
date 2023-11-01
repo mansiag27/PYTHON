@@ -1,0 +1,21 @@
+15)Write a Python program to get the maximum and minimum value in a dictionary. 
+
+solution--
+product=['bag','pen','notbook']
+cost=[500,10,40]
+m={key:value for(key,value) in zip(product,cost)}
+max1=float('-inf')
+min1=float('inf')
+for k,i in m.items():
+    if i>max1:
+        max1=i
+        maxkey=k
+    if i<min1:
+        min1=i
+        minkey=k
+print(maxkey)
+print(minkey)
+
+output--
+bag
+pen

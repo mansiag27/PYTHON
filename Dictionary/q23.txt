@@ -1,0 +1,9 @@
+22). Write a Python program to find the highest 3 values in a dictionary. 
+  
+solution--
+mydict1={1:20,2:56,3:45,4:67,5:23}
+m=sorted(mydict1.items(),key=lambda x:x[1],reverse=True)
+print(m[:3])
+
+output--
+[(4, 67), (2, 56), (3, 45)]

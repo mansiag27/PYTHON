@@ -1,0 +1,11 @@
+14)Write a Python program to sort a dictionary by key. 
+
+solution--
+product=['bag','pen','notbook']
+cost=[500,10,40]
+m={key:value for(key,value) in zip(product,cost)}
+sort_m=sorted(m.items(),key=lambda x:x[0])
+print(sort_m)
+
+output--
+[('bag', 500), ('notbook', 40), ('pen', 10)]
