@@ -1,0 +1,12 @@
+1)Write a Python script to sort (ascending and descending) a dictionary by value.
+
+solution--
+
+list1=[1,2,3,4,5]
+list2=['mansi','manu','ketan','manav','priya']
+m={key:value for(key,value) in zip(list1,list2)}
+ans=sorted(m.items(),key= lambda x:x[1])
+print(ans)
+
+output--
+[(3, 'ketan'), (4, 'manav'), (1, 'mansi'), (2, 'manu'), (5, 'priya')]

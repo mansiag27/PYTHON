@@ -1,0 +1,14 @@
+10)Write a Python program to multiply all the items in a dictionary. 
+
+solution--
+product=['bag','pen','notbook']
+cost=[500,10,40]
+
+m={key:value for(key,value) in zip(product,cost)}
+ans=1
+for i,k in m.items():
+    ans=ans*k
+print(ans)
+
+output--
+200000

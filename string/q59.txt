@@ -1,0 +1,13 @@
+
+59)Write a Python program to find the maximum occurring character in a given string. 
+
+solution--
+
+from collections import Counter
+str1="mansiagarwal"
+count_char=Counter(str1)
+m=sorted(count_char.items(),key=lambda x:x[1],reverse=True)
+print("maximum occuring character:",m[0][0])
+
+output--
+maximum occuring character: a

@@ -1,0 +1,12 @@
+57)Write a Python program to remove spaces from a given string. 
+
+solution--
+str1="i am mansi agarwal"
+for i in str1:
+    if i==" ":
+        continue
+    else:
+        print(i,end="")
+
+output--
+iammansiagarwal

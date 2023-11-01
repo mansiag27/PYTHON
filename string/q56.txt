@@ -1,0 +1,25 @@
+56) Write a Python program to find the second most repeated word in a given string. 
+
+solution--
+from collections import Counter
+
+str1="i am is a mansi just mansi just  just sky is go is h is"
+
+words=str1.split()
+
+count_word=Counter(words)
+#print(count_word)
+
+ans=sorted(count_word.items(),key=lambda x:x[1],reverse=True)
+#print(ans)
+
+max_count=ans[0][1]
+
+for i,k in ans:
+    if k<max_count:
+        print(i)
+        break
+       
+
+output--
+just

@@ -1,0 +1,22 @@
+58)Write a Python program to move spaces to the front of a given string. 
+
+solution--
+str1='i  am     mansiagarwal'
+space=0
+new=''
+for i in str1:
+    if i==' ':
+        space+=1
+        continue
+    else:
+        new+=i
+ans=''
+while space!=0:
+    ans+=' '
+    space-=1
+
+ans=ans+new
+print(ans)
+        
+output--
+       iammansiagarwal

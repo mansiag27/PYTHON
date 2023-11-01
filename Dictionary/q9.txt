@@ -1,0 +1,12 @@
+9) Write a Python program to sum all the items in a dictionary. 
+
+solution--
+
+product=['bag','pen','notbook']
+cost=[500,10,40]
+m={key:value for(key,value) in zip(product,cost)}
+total=sum(m.values())
+print("sum: ",total)
+
+output--
+sum: 550

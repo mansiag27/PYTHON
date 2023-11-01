@@ -1,0 +1,25 @@
+4)Write a Python script to check whether a given key already exists in a dictionary. 
+
+solution--
+
+list1=[1,2,3,4]
+list2=['mansi','manu','manjari','meghna']
+ans=False
+m={key:value for (key,value) in zip(list1,list2)}
+print(m)
+key_input=int(input("Enter key: "))
+
+for i,k in m.items():
+    if i==key_input:
+        ans=True
+
+if ans:
+    print(key_input," exist as a key in dictionary")
+else:
+    print(key_input," does not exist as a key in dictionary")
+    
+output--
+{1: 'mansi', 2: 'manu', 3: 'manjari', 4: 'meghna'}
+
+Enter key: 6
+6  does not exist as a key in dictionary

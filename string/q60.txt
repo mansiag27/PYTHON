@@ -1,0 +1,19 @@
+60)Write a Python program to capitalize first and last letters of each word of a given string. 
+
+solution--
+str1="mansi agarwal"
+word=str1.split()
+result=[]
+
+for i in word:
+    if len(word)>1:
+        cap=i[0].capitalize()+i[1:-1]+i[-1].capitalize()
+    else:
+        cap=i.capitalize()
+    result.append(cap)
+    
+a1=' '.join(result)
+print(a1)
+
+output--
+MansI AgarwaL 

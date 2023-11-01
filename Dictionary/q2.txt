@@ -1,0 +1,15 @@
+2)Write a Python script to add a key to a dictionary. 
+Sample Dictionary : {0: 10, 1: 20}
+Expected Result : {0: 10, 1: 20, 2: 30}
+
+solution--
+list1=[1,2,3,4,5]
+list2=["mansi","manu","ketan","manav","priya"]
+m={key:value for(key,value)in zip(list1,list2)}
+print(m)
+m[6]="anjali"
+print(m)
+
+output--
+{1: 'mansi', 2: 'manu', 3: 'ketan', 4: 'manav', 5: 'priya'}
+{1: 'mansi', 2: 'manu', 3: 'ketan', 4: 'manav', 5: 'priya', 6: 'anjali'}

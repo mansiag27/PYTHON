@@ -1,0 +1,15 @@
+
+5)Write a Python program to iterate over dictionaries using for loops. 
+solution--
+list1=[1,2,3,4]
+list2=['mansi','manu','manjari','meghna']
+
+new=[]
+for i, k in zip(list1,list2):
+    m={'roll no':i,'name':k}
+    new.append(m)
+    
+print(new)
+
+output--
+[{'roll no': 1, 'name': 'mansi'}, {'roll no': 2, 'name': 'manu'}, {'roll no': 3, 'name': 'manjari'}, {'roll no': 4, 'name': 'meghna'}]
