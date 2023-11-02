@@ -1,0 +1,23 @@
+6)Write a Python program to create an intersection of sets. 
+
+solution--
+
+my=set()
+n=int(input("enter length: "))
+for i in range(n):
+    value=int(input("enter value: "))
+    my.add(value)
+print(my)
+
+output--
+
+enter length: 4
+
+enter value: 1
+
+enter value: 2
+
+enter value: 3
+
+enter value: 4
+{1, 2, 3, 4}

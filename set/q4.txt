@@ -1,0 +1,9 @@
+4)Write a Python program to remove item(s) from set 
+solution--
+
+my=([1,2,3,4])
+my.pop(3)
+print(my)
+
+output--
+[1, 2, 3]

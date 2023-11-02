@@ -1,0 +1,7 @@
+15)Write a Python program to find maximum and the minimum value in a set. 
+
+solution--
+m1={1,2,3,4}
+min1=min(m1)
+max1=max(m1)
+print("max: ",max1,"min: ",min1)

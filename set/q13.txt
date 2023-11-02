@@ -1,0 +1,10 @@
+13)Write a Python program to clear a set. 
+
+solution--
+
+m1={1,2,3,4}
+m1.clear()
+print(m1)
+
+output--
+set()

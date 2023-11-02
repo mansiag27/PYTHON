@@ -1,0 +1,17 @@
+9)Write a Python program to create a symmetric difference. 
+
+solution--
+my1=set()
+n=int(input("enter length: "))
+for i in range(n):
+    value=int(input("enter value: "))
+    my1.add(value)
+    
+my2=set()
+n1=int(input("enter length: "))
+for i in range(n1):
+    value2=int(input("enter value: "))
+    my2.add(value2)
+    
+new=my1.symmetric_difference(my2)
+print(new)

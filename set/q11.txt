@@ -1,0 +1,41 @@
+11)Write a Python program to issubset and issuperset. 
+solution--
+
+my1=set()
+n=int(input("enter length: "))
+for i in range(n):
+    value=int(input("enter value: "))
+    my1.add(value)
+    
+my2=set()
+n1=int(input("enter length: "))
+for i in range(n1):
+    value2=int(input("enter value: "))
+    my2.add(value2)
+    
+new=my1.issubset(my2)
+print(new)
+
+new2=my1.issuperset(my2)
+print(new2)
+
+output--
+enter length: 4
+
+enter value: 1
+
+enter value: 2
+
+enter value: 3
+
+enter value: 4
+
+enter length: 3
+
+enter value: 1
+
+enter value: 2
+
+enter value: 3
+False
+True

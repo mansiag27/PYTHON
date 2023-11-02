@@ -1,0 +1,80 @@
+7)Write a Python program to create a union of sets. 
+solution--
+my1=set()
+n=int(input("enter length: "))
+for i in range(n):
+    value=int(input("enter value: "))
+    my1.add(value)
+    
+my2=set()
+n1=int(input("enter length: "))
+for i in range(n1):
+    value2=int(input("enter value: "))
+    my2.add(value2)
+    
+new=my1.union(my2)
+print(new)
+
+output--
+
+enter length: 4
+
+enter value: 1
+
+enter value: 2
+
+enter value: 3
+
+enter value: 4
+
+enter length: 3
+
+enter value: 12
+
+enter value: 33
+
+enter value: 21
+{1, 2, 3, 4, 33, 21, 12}
+
+8)Write a Python program to create set difference.
+
+solution--
+
+my1=set()
+n=int(input("enter length: "))
+for i in range(n):
+    value=int(input("enter value: "))
+    my1.add(value)
+    
+my2=set()
+n1=int(input("enter length: "))
+for i in range(n1):
+    value2=int(input("enter value: "))
+    my2.add(value2)
+    
+new=my1.difference(my2)
+print(new)
+
+output--
+enter length: 4
+
+enter value: 1
+
+enter value: 2
+
+enter value: 3
+
+enter value: 4
+
+enter length: 3
+
+enter value: 4
+
+enter value: 5
+
+enter value: 6
+{1, 2, 3}
+
+9)
+
+ 

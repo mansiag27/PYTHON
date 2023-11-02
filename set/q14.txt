@@ -1,0 +1,12 @@
+14)Write a Python program to use of frozensets. 
+
+solution--
+m1={1,2,3,4}
+my=frozenset(m1)
+try:
+    my.add(6)
+except AttributeError:
+    print("cannot add as it is frozetset")
+
+output--
+cannot add as it is frozetset

@@ -1,0 +1,17 @@
+5)Write a Python program to remove an item from a set if it is present in the set. 
+
+solution--
+
+my=[1,2,3,4]
+
+n=int(input("enter value: "))  
+if n<0 or n>=len(my):
+    print("not")
+else:
+    my.pop(n)
+print(my)
+
+
+ouput--
+enter value: 1
+[1, 3, 4]

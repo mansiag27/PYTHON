@@ -1,0 +1,10 @@
+
+16)Write a Python program to find the length of a set. 
+
+solution--
+m1={1,2,3,4}
+new=len(m1)
+print(new)
+
+output--
+4
