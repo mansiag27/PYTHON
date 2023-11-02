@@ -1,0 +1,18 @@
+34)Write a Python program to count number of items in a dictionary value that is a list. 
+
+solution--
+my={'key1':[1,2,3],'key2':['a','b'],'key3':[True,False],'key4':7}
+new={}
+for i,k in my.items():
+    if isinstance(k, list):
+        new[i]=len(k)
+    else:
+        continue
+    
+for i,k in new.items():
+    print(i,k)
+
+output--
+key1 3
+key2 2
+key3 2

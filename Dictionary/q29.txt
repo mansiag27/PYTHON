@@ -1,0 +1,13 @@
+29)Write a Python program to remove spaces from dictionary keys. 
+
+solution--
+my={'my name':1,"is a":2,"just as":3}
+new_dict={}
+for i,k in my.items():
+    new=i.replace(" ", "")
+    new_dict[new]=k
+    
+print(new_dict)
+
+output--
+{'myname': 1, 'isa': 2, 'justas': 3}

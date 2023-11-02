@@ -1,0 +1,39 @@
+31)Write a Python program to get the key, value and item in a dictionary. 
+solution--
+data= {'item1': 45.50, 
+       'item2':35, 
+       'item3': 41.30, 
+       'item4':55, 
+       'item5': 24}
+
+print("keys")
+for i in data.keys():
+    print(i) 
+ 
+print("values: ")
+for i in data.values():
+    print(i)
+    
+print("key-value pair: ")
+for i,k in data.items():
+    print(i,k)
+
+output--
+keys
+item1
+item2
+item3
+item4
+item5
+values: 
+45.5
+35
+41.3
+55
+24
+key-value pair: 
+item1 45.5
+item2 35
+item3 41.3
+item4 55
+item5 24

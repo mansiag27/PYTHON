@@ -1,0 +1,10 @@
+28)Write a Python program to sort a list alphabetically in a dictionary. 
+
+solution--
+mydict={1:'c',2:'a',3:'b'}
+
+m=sorted(mydict.items(),key=lambda x:x[1])
+print(m)
+
+output--
+[(2, 'a'), (3, 'b'), (1, 'c')]
