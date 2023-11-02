@@ -1,0 +1,9 @@
+5)Write a Python program to add an item in a tuple.
+
+solution--
+new=(1,2,3,4)
+new=new+(5,)
+print(new)
+
+output--
+(1,2,3,4,5)

@@ -1,0 +1,12 @@
+6)Write a Python program to convert a tuple to a string.
+
+solution--
+
+new=(1,2,3,4)
+new=str(new)
+print(new)
+print(type(new))
+
+output--
+(1, 2, 3, 4)
+<class 'str'>

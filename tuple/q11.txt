@@ -1,0 +1,10 @@
+11)Write a Python program to convert a list to a tuple.
+
+solution--
+
+new=[1,2,3]
+print(tuple(new))
+ 
+
+output--
+(1,2,3)

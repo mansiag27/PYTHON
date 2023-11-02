@@ -1,0 +1,17 @@
+9)Write a Python program to find the repeated items of a tuple.
+
+solution--
+
+new=(1,2,3,1,2,4,3)
+sen=tuple()
+for i in new:
+    if i not in sen:
+        sen=sen+(i,)
+    else:
+        print(i)
+        continue
+
+output--
+1
+2
+3

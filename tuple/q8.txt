@@ -1,0 +1,8 @@
+
+8)Write a Python program to create the colon of a tuple.
+solution--
+new=tuple(":" for i in range(1,10))
+print(new)
+
+output--
+(':', ':', ':', ':', ':', ':', ':', ':', ':')

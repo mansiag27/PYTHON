@@ -1,0 +1,10 @@
+12)Write a Python program to remove an item from a tuple.
+solution--
+
+tuple1=(1,2,3,4)
+y=3
+m=tuple(i for i in tuple1 if i!=y )
+print(m)
+
+output--
+(1,2,4)

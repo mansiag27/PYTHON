@@ -1,0 +1,21 @@
+10)Write a Python program to check whether an element exists within a tuple.
+
+solution--
+
+new=(1,2,3,1,2,4,3)
+y=False
+n=int(input("enter value: "))
+for i in new:
+    if i==n:
+        y=True
+        
+if y:
+    print("exist")
+else:
+    print("not exist")
+
+
+output--
+
+enter value: 6
+not exist
