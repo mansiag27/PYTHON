@@ -1,0 +1,18 @@
+set
+
+
+1)Write a Python program to create a set. 
+
+solution--
+
+my={1,2,3,4,5}
+another_set=set([5,6,7,8])
+print(my)
+print(another_set)
+
+output--
+{1, 2, 3, 4, 5}
+{8, 5, 6, 7}
+
+2)
+
