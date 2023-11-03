@@ -1,0 +1,10 @@
+20)Write a Python program to print a tuple with string formatting.
+Sample tuple : (100, 200, 300)
+Output : This is a tuple (100, 200, 300)
+
+solution--
+t1=((1,2,),(3,4))
+print("This is a tuple",t1)
+
+output--
+This is a tuple ((1, 2), (3, 4))

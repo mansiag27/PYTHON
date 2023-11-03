@@ -1,0 +1,11 @@
+24)Write a Python program to count the elements in a list until an element is a tuple.
+solution--
+t=[11,22,44,(5,6,7),7,8]
+count=0
+for i in t:
+    if isinstance(i, tuple):
+        break
+    count+=1
+print(count)
+output--
+3

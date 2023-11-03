@@ -1,0 +1,8 @@
+18)Write a Python program to reverse a tuple.
+solution--
+t1=(1,2,3,4)
+m=t1[::-1]
+print(m)
+
+output--
+(4, 3, 2, 1)

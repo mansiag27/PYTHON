@@ -1,0 +1,13 @@
+14)Write a Python program to find the index of an item of a tuple.
+
+solution--
+t1=(1,2,3,45)
+
+for i,k in enumerate(t1):
+    print(i,k)
+
+output--
+0 1
+1 2
+2 3
+3 45

@@ -1,0 +1,8 @@
+13). Write a Python program to slice a tuple.
+
+solution--
+t1=(1,2,3,4)
+print(t1[2:])
+
+output--
+(3,4)

@@ -1,0 +1,9 @@
+16)Write a Python program to convert a tuple to a dictionary.
+solution--
+
+t1=((1,'a'),(2,'b'),(3,'f'))
+m=dict(t1)
+print(m)
+
+solution--
+{1: 'a', 2: 'b', 3: 'f'}

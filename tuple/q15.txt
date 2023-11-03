@@ -1,0 +1,8 @@
+15)Write a Python program to find the length of a tuple.
+
+solution--
+t1=(1,2,3,45)
+print(len(t1))
+
+output--
+4

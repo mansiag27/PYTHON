@@ -1,0 +1,12 @@
+17)Write a Python program to unzip a list of tuples into individual lists.
+solution--
+
+t1=[(1,'a'),(2,'b'),(3,'f')]
+unzip=list(zip(*t1))
+a,b=unzip
+print(a)
+print(b)
+
+output--
+(1, 2, 3)
+('a', 'b', 'f')
