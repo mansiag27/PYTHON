@@ -1,0 +1,735 @@
+Dictionary
+
+1)Write a Python script to sort (ascending and descending) a dictionary by value.
+
+solution--
+
+list1=[1,2,3,4,5]
+list2=['mansi','manu','ketan','manav','priya']
+m={key:value for(key,value) in zip(list1,list2)}
+ans=sorted(m.items(),key= lambda x:x[1])
+print(ans)
+
+output--
+[(3, 'ketan'), (4, 'manav'), (1, 'mansi'), (2, 'manu'), (5, 'priya')]
+
+2)Write a Python script to add a key to a dictionary. 
+Sample Dictionary : {0: 10, 1: 20}
+Expected Result : {0: 10, 1: 20, 2: 30}
+
+solution--
+list1=[1,2,3,4,5]
+list2=["mansi","manu","ketan","manav","priya"]
+m={key:value for(key,value)in zip(list1,list2)}
+print(m)
+m[6]="anjali"
+print(m)
+
+output--
+{1: 'mansi', 2: 'manu', 3: 'ketan', 4: 'manav', 5: 'priya'}
+{1: 'mansi', 2: 'manu', 3: 'ketan', 4: 'manav', 5: 'priya', 6: 'anjali'}
+
+3)Write a Python script to concatenate following dictionaries to create a new one. 
+Sample Dictionary :
+dic1={1:10, 2:20}
+dic2={3:30, 4:40}
+dic3={5:50,6:60}
+Expected Result : {1: 10, 2: 20, 3: 30, 4: 40, 5: 50, 6: 60}
+
+solution--
+
+dict1={1:10,2:20}
+dict2={3:30,4:40}
+dict3={5:50,6:60}
+
+dict1.update(dict2)
+dict1.update(dict3)
+print(dict1)
+
+output--
+{1: 10, 2: 20, 3: 30, 4: 40, 5: 50, 6: 60}
+
+4)Write a Python script to check whether a given key already exists in a dictionary. 
+
+solution--
+
+list1=[1,2,3,4]
+list2=['mansi','manu','manjari','meghna']
+ans=False
+m={key:value for (key,value) in zip(list1,list2)}
+print(m)
+key_input=int(input("Enter key: "))
+
+for i,k in m.items():
+    if i==key_input:
+        ans=True
+
+if ans:
+    print(key_input," exist as a key in dictionary")
+else:
+    print(key_input," does not exist as a key in dictionary")
+    
+output--
+{1: 'mansi', 2: 'manu', 3: 'manjari', 4: 'meghna'}
+
+Enter key: 6
+6  does not exist as a key in dictionary
+
+5)Write a Python program to iterate over dictionaries using for loops. 
+solution--
+list1=[1,2,3,4]
+list2=['mansi','manu','manjari','meghna']
+
+new=[]
+for i, k in zip(list1,list2):
+    m={'roll no':i,'name':k}
+    new.append(m)
+    
+print(new)
+
+output--
+[{'roll no': 1, 'name': 'mansi'}, {'roll no': 2, 'name': 'manu'}, {'roll no': 3, 'name': 'manjari'}, {'roll no': 4, 'name': 'meghna'}]
+
+6)Write a Python script to generate and print a dictionary that contains a number (between 1 and n) in the form (x, x*x). 
+Sample Dictionary ( n = 5) :
+Expected Output : {1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+
+solution--
+m={i:i*i for i in range(1,6)}
+print(m)
+
+output--
+{1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+
+7)Write a Python script to print a dictionary where the keys are numbers between 1 and 15 (both included) and the values are square of keys. 
+Sample Dictionary
+{1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81, 10: 100, 11: 121, 12: 144, 13: 169, 14: 196, 15: 225}
+
+solution--
+
+m={x:x**2 for x in range(1,16)}
+print(m)
+
+output--
+{1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81, 10: 100, 11: 121, 12: 144, 13: 169, 14: 196, 15: 225}
+
+8)Write a Python script to merge two Python dictionaries
+
+solution--
+(two ways of making dictionary
+m1={x:x**2 for x in range(1,16)}   //first way
+
+list1=[3,4,5]
+list2=['mansi','manu','anjali']
+m2={key:value for(key,value)in zip(list1,list2)}   //second way
+
+m1.update(m2)
+print(m1)  
+
+output--
+{1: 1, 2: 4, 3: 'mansi', 4: 'manu', 5: 'anjali', 6: 36, 7: 49, 8: 64, 9: 81, 10: 100, 11: 121, 12: 144, 13: 169, 14: 196, 15: 225} 
+
+9) Write a Python program to sum all the items in a dictionary. 
+
+solution--
+
+product=['bag','pen','notbook']
+cost=[500,10,40]
+m={key:value for(key,value) in zip(product,cost)}
+total=sum(m.values())
+print("sum: ",total)
+
+output--
+sum: 550
+
+10)Write a Python program to multiply all the items in a dictionary. 
+
+solution--
+product=['bag','pen','notbook']
+cost=[500,10,40]
+
+m={key:value for(key,value) in zip(product,cost)}
+ans=1
+for i,k in m.items():
+    ans=ans*k
+print(ans)
+
+output--
+200000
+
+11)Write a Python program to remove a key from a dictionary.
+ 
+solution--
+product=['bag','pen','notbook']
+cost=[500,10,40]
+m={key:value for(key,value) in zip(product,cost)}
+print(m)
+m.pop('pen')
+print(m)
+
+output--
+{'bag': 500, 'pen': 10, 'notbook': 40}
+{'bag': 500, 'notbook': 40}
+
+13) Write a Python program to map two lists into a dictionary
+
+solution--
+product=['bag','pen','notbook']
+cost=[500,10,40]
+m={key:value for(key,value) in zip(product,cost)}
+print(m)
+
+solution--
+{'bag': 500, 'pen': 10, 'notbook': 40}
+
+14)Write a Python program to sort a dictionary by key. 
+
+solution--
+product=['bag','pen','notbook']
+cost=[500,10,40]
+m={key:value for(key,value) in zip(product,cost)}
+sort_m=sorted(m.items(),key=lambda x:x[0])
+print(sort_m)
+
+output--
+[('bag', 500), ('notbook', 40), ('pen', 10)]
+
+15)Write a Python program to get the maximum and minimum value in a dictionary. 
+
+solution--
+product=['bag','pen','notbook']
+cost=[500,10,40]
+m={key:value for(key,value) in zip(product,cost)}
+max1=float('-inf')
+min1=float('inf')
+for k,i in m.items():
+    if i>max1:
+        max1=i
+        maxkey=k
+    if i<min1:
+        min1=i
+        minkey=k
+print(maxkey)
+print(minkey)
+
+output--
+bag
+pen
+
+16)Write a Python program to get a dictionary from an object's fields. 
+
+solution--
+
+class   Person:
+    def __init__(self,name,age):
+        self.name=name
+        self.age=age
+
+person=Person("Mansi",23)
+person_dict=vars(person)
+
+print(person_dict)
+
+17)Write a Python program to remove duplicates from Dictionary. 
+
+solution--
+
+product=['bag','pen','notbook','bottle']
+cost=[500,10,40,10]
+m={key:value for(key,value) in zip(product,cost)}
+unique={}
+for key,value in m.items():
+    if value not in unique.values():
+        unique[key]=value
+  
+print("original: ")
+print(m)
+print("without duplicates: ")
+print(unique)
+        
+output--
+original: 
+{'bag': 500, 'pen': 10, 'notbook': 40, 'bottle': 10}
+without duplicates: 
+{'bag': 500, 'pen': 10, 'notbook': 40}
+
+18)Write a Python program to check a dictionary is empty or not. 
+
+solution--
+product=['bag','pen','notbook','bottle']
+cost=[500,10,40,10]
+m={key:value for(key,value) in zip(product,cost)}
+new={}
+if len(m)<1:
+    print("empty")
+else:
+    print("not empty")
+
+output--
+not empty
+
+19) Write a Python program to combine two dictionary adding values for common keys. 
+d1 = {'a': 100, 'b': 200, 'c':300}
+d2 = {'a': 300, 'b': 200, 'd':400}
+Sample output: Counter({'a': 400, 'b': 400, 'd': 400, 'c': 300})
+
+solution--
+mydict1={'a':1,'b':2}
+mydict2={'c':3,'d':4}
+new={}
+
+new.update(mydict1)
+new.update(mydict2)
+print(new)
+
+output--
+{'a': 1, 'b': 2, 'c': 3, 'd': 4}
+
+20)Write a Python program to print all unique values in a dictionary. 
+Sample Data : [{"V":"S001"}, {"V": "S002"}, {"VI": "S001"}, {"VI": "S005"}, {"VII":"S005"}, {"V":"S009"},{"VIII":"S007"}]
+Expected Output : Unique Values: {'S005', 'S002', 'S007', 'S001', 'S009'}
+
+solution--
+
+Sample_Data=[{"V":"S001"}, {"V": "S002"}, {"VI": "S001"}, {"VI": "S005"}, {"VII":"S005"}, {"V":"S009"},{"VIII":"S007"}]
+
+unique=set()
+
+for i in Sample_Data:
+    for j in i.values():
+        unique.add(j)
+
+print(unique)
+
+21)Write a Python program to create and display all combinations of letters, selecting each letter from a different key in a dictionary. 
+Sample data : {'1':['a','b'], '2':['c','d']}
+Expected Output:
+ac
+ad
+bc
+bd
+
+solution--
+import itertools
+sample={'1':['a','b'],'2':['c','d']}
+list1=[]
+for i in itertools.product(*sample.values()):
+    list1.append("".join(i))
+print(list1)
+
+output--
+['ac', 'ad', 'bc', 'bd']
+
+22). Write a Python program to find the highest 3 values in a dictionary. 
+  
+solution--
+mydict1={1:20,2:56,3:45,4:67,5:23}
+m=sorted(mydict1.items(),key=lambda x:x[1],reverse=True)
+print(m[:3])
+
+output--
+[(4, 67), (2, 56), (3, 45)]
+
+23) Write a Python program to combine values in python list of dictionaries. 
+Sample data: [{'item': 'item1', 'amount': 400}, {'item': 'item2', 'amount': 300}, {'item': 'item1', 'amount': 750}]
+Expected Output: Counter({'item1': 1150, 'item2': 300})
+
+solution--
+
+from collections import Counter
+Sample_data=[{'item': 'item1', 'amount': 400},
+             {'item': 'item2', 'amount': 300},
+             {'item': 'item1', 'amount': 750}]
+
+new= Counter()
+
+for i in Sample_data:
+    item=i['item']
+    amount=i['amount']     
+    new[item]+=amount 
+print(new)    
+
+output--
+Counter({'item1': 1150, 'item2': 300})
+
+24)Write a Python program to create a dictionary from a string. 
+Note: Track the count of the letters from the string.
+Sample string : 'w3resource'
+Expected output: {'3': 1, 's': 1, 'r': 2, 'u': 1, 'w': 1, 'c': 1, 'e': 2, 'o': 1}
+
+solution
+
+from collections import Counter
+str1="w3resource"
+new=Counter(str1)
+print(new)
+
+25) Write a Python program to print a dictionary in table format. 
+solution--
+from prettytable import PrettyTable
+list1=[1,2,3,4]
+list2=['mansi','manu','sejal','sonali']
+
+m={key:value for(key,value)in zip(list1,list2)}
+
+table=PrettyTable()
+table.field_names=['key','value']
+
+for i,k in m.items():
+    table.add_row([i,k])
+
+print(table)
+
+output--
+Output from spyder call 'get_var_properties':
++-----+--------+
+| key | value  |
++-----+--------+
+|  1  | mansi  |
+|  2  |  manu  |
+|  3  | sejal  |
+|  4  | sonali |
++-----+--------+
+
+26). Write a Python program to count the values associated with key in a dictionary. 
+Sample data: = [{'id': 1, 'success': True, 'name': 'Lary'}, {'id': 2, 'success': False, 'name': 'Rabi'}, {'id': 3, 'success': True, 'name': 'Alex'}]
+Expected result: Count of how many dictionaries have success as True
+
+solution--
+data=[{'id': 1, 'success': True, 'name': 'Lary'},
+      {'id': 2, 'success': False, 'name': 'Rabi'}, 
+      {'id': 3, 'success': True, 'name': 'Alex'}]
+count=0
+for i in data:
+        if i['success'] is True:
+            count+=1
+print("count: ",count)
+
+output--
+count:  2
+
+
+27)Write a Python program to convert a list into a nested dictionary of keys. 
+solution--
+
+list1=['a','b','c','d']
+result={}
+ans=result
+
+for i in list1:
+    ans[i]={}
+    ans=ans[i]
+print(result)
+
+output--
+{'a': {'b': {'c': {'d': {}}}}}
+
+28)Write a Python program to sort a list alphabetically in a dictionary. 
+
+solution--
+mydict={1:'c',2:'a',3:'b'}
+
+m=sorted(mydict.items(),key=lambda x:x[1])
+print(m)
+
+output--
+[(2, 'a'), (3, 'b'), (1, 'c')]
+
+
+29)Write a Python program to remove spaces from dictionary keys. 
+
+solution--
+my={'my name':1,"is a":2,"just as":3}
+new_dict={}
+for i,k in my.items():
+    new=i.replace(" ", "")
+    new_dict[new]=k
+    
+print(new_dict)
+
+output--
+{'myname': 1, 'isa': 2, 'justas': 3}
+
+30)30. Write a Python program to get the top three items in a shop. 
+Sample data: {'item1': 45.50, 'item2':35, 'item3': 41.30, 'item4':55, 'item5': 24}
+Expected Output:
+item4 55
+item1 45.5
+item3 41.3
+
+solution--
+data= {'item1': 45.50, 
+       'item2':35, 
+       'item3': 41.30, 
+       'item4':55, 
+       'item5': 24}
+
+n=sorted(data.items(),key=lambda x:x[1],reverse=True)
+k=list(n[:3])
+for i in k:
+    print(i)
+
+output--
+('item4', 55)
+('item1', 45.5)
+('item3', 41.3)
+
+
+31)Write a Python program to get the key, value and item in a dictionary. 
+solution--
+data= {'item1': 45.50, 
+       'item2':35, 
+       'item3': 41.30, 
+       'item4':55, 
+       'item5': 24}
+
+print("keys")
+for i in data.keys():
+    print(i) 
+ 
+print("values: ")
+for i in data.values():
+    print(i)
+    
+print("key-value pair: ")
+for i,k in data.items():
+    print(i,k)
+
+output--
+keys
+item1
+item2
+item3
+item4
+item5
+values: 
+45.5
+35
+41.3
+55
+24
+key-value pair: 
+item1 45.5
+item2 35
+item3 41.3
+item4 55
+item5 24
+
+32)Write a Python program to print a dictionary line by line. 
+solution--
+
+data= {'item1': 45.50, 
+       'item2':35, 
+       'item3': 41.30, 
+       'item4':55, 
+       'item5': 24}
+
+
+for i,k in data.items():
+    print(i,k)
+
+output--
+item1 45.5
+item2 35
+item3 41.3
+item4 55
+item5 24
+
+33)Write a Python program to check multiple keys exists in a dictionary. 
+
+solution--
+data = {1: 'a', 2: 'b', 4: 'c', 8: 'd'}
+key1 = [1, 2, 4, 8]
+
+yes = all(i in data for i in key1)
+if yes:
+    print("All keys exist")
+else:
+    print("Not all keys exist")
+
+output--
+All keys exist
+
+34)Write a Python program to count number of items in a dictionary value that is a list. 
+
+solution--
+my={'key1':[1,2,3],'key2':['a','b'],'key3':[True,False],'key4':7}
+new={}
+for i,k in my.items():
+    if isinstance(k, list):
+        new[i]=len(k)
+    else:
+        continue
+    
+for i,k in new.items():
+    print(i,k)
+
+output--
+key1 3
+key2 2
+key3 2
+
+35)Write a Python program to sort Counter by value. 
+Sample data : {'Math':81, 'Physics':83, 'Chemistry':87}
+Expected data: [('Chemistry', 87), ('Physics', 83), ('Math', 81)]
+
+solution--
+
+data ={'Math':81, 'Physics':83, 'Chemistry':87}
+m=sorted(data.items(),key=lambda x:x[1],reverse=True)
+print(m)
+
+output--
+[('Chemistry', 87), ('Physics', 83), ('Math', 81)]
+
+36)Write a Python program to create a dictionary from two lists without losing duplicate values. 
+Sample lists: ['Class-V', 'Class-VI', 'Class-VII', 'Class-VIII'], [1, 2, 2, 3]
+Expected Output: defaultdict(<class 'set'>, {'Class-VII': {2}, 'Class-VI': {2}, 'Class-VIII': {3}, 'Class-V': {1}})
+
+solution--
+list1=['Class-V', 'Class-VI', 'Class-VII', 'Class-VIII']
+list2=[1, 2, 2, 3]
+m={key:value for(key,value)in zip(list1,list2)}
+print(m)
+
+37)Write a Python program to replace dictionary values with their sum. 
+
+solution--
+
+dict={'a':[1,2,3],'b':[2,3,4],'c':[4,5,6]}
+new={}
+for i,k in dict.items():
+    if isinstance(k, list):
+        new[i]=sum(k)
+    else:
+        new[i]=k       
+print(new)
+
+
+output--
+{'a': 6, 'b': 9, 'c': 15}
+
+38)Write a Python program to match key values in two dictionaries. 
+Sample dictionary: {'key1': 1, 'key2': 3, 'key3': 2}, {'key1': 1, 'key2': 2}
+Expected output: key1: 1 is present in both x and y
+
+solution--
+
+a1={'key1': 1, 'key2': 3, 'key3': 2}
+a2={'key1': 1, 'key2': 2}
+
+for i,k in a1.items():
+    if i in a2 and a2[i]==k:
+        print(i,"present in both")
+
+output--
+key1 present in both
+
+39)Write a Python program to store a given dictionary in a json file. 
+Original dictionary:
+{'students': [{'firstName': 'Nikki', 'lastName': 'Roysden'}, {'firstName': 'Mervin', 'lastName': 'Friedland'}, {'firstName': 'Aron ', 'lastName': 'Wilkins'}], 'teachers': [{'firstName': 'Amberly', 'lastName': 'Calico'}, {'firstName': 'Regine', 'lastName': 'Agtarap'}]}
+<class 'dict'>
+Json file to dictionary:
+{'students': [{'firstName': 'Nikki', 'lastName': 'Roysden'}, {'firstName': 'Mervin', 'lastName': 'Friedland'}, {'firstName': 'Aron ', 'lastName': 'Wilkins'}], 'teachers': [{'firstName': 'Amberly', 'lastName': 'Calico'}, {'firstName': 'Regine', 'lastName': 'Agtarap'}]}
+
+solution--
+
+import pandas as pd
+Original={'students': [{'firstName': 'Nikki', 'lastName': 'Roysden'},
+                      {'firstName': 'Mervin', 'lastName': 'Friedland'}],
+         'teachers': [{'firstName': 'Amberly', 'lastName': 'Calico'}, 
+                      {'firstName': 'Regine', 'lastName': 'Agtarap'}]}
+my=pd.DataFrame(Original)
+my.to_json("C:\\Users\\hrsht\\Desktop\\New folder (2)\\temp.json")
+
+40)Write a Python program to create a dictionary of keys x, y, and z where each key has as value a list from 11-20, 21-30, and 31-40 respectively. Access the fifth value of each key from the dictionary. 
+{'x': [11, 12, 13, 14, 15, 16, 17, 18, 19],
+'y': [21, 22, 23, 24, 25, 26, 27, 28, 29],
+'z': [31, 32, 33, 34, 35, 36, 37, 38, 39]}
+15
+25
+35
+x has value [11, 12, 13, 14, 15, 16, 17, 18, 19]
+y has value [21, 22, 23, 24, 25, 26, 27, 28, 29]
+z has value [31, 32, 33, 34, 35, 36, 37, 38, 39]
+
+output--
+
+work={'x': [11, 12, 13, 14, 15, 16, 17, 18, 19],
+    'y': [21, 22, 23, 24, 25, 26, 27, 28, 29],
+    'z': [31, 32, 33, 34, 35, 36, 37, 38, 39]}
+
+print(work['x'][4])
+print(work['y'][4])
+print(work['z'][4])
+
+
+
+
+
+
+
+
+
+        
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
