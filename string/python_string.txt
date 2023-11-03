@@ -1,0 +1,1074 @@
+String---
+
+1) Write a Python program to calculate the length of a string. 
+
+solution--
+
+
+str=input("enter string: ")
+n=0
+for ch in str:
+    n+=1
+    
+print(n)
+
+output--
+5
+
+2)Write a Python program to count the number of characters (character frequency) in a string. 
+Sample String : google.com'
+Expected Result : {'o': 3, 'g': 2, '.': 1, 'e': 1, 'l': 1, 'm': 1, 'c': 1}
+
+solution-
+(method-1)
+from collections import Counter
+
+str=input("enter string: ")
+mystr=Counter(str)
+print(mystr)
+
+output--
+enter string: google.com
+Counter({'o': 3, 'g': 2, 'l': 1, 'e': 1, '.': 1, 'c': 1, 'm': 1})
+-----------------------------------------------------------
+(method-2)
+str=input("enter value: ")
+
+char_count={}
+
+for i in str:
+    if i in char_count:
+        char_count[i]+=1
+    else:
+        char_count[i]=1
+        
+for i ,h in char_count.items():
+    print(f'{i}:{h}')
+    
+
+output--
+enter value: google.con
+g:2
+o:3
+l:1
+e:1
+.:1
+c:1
+n:1
+
+3)Write a Python program to get a string made of the first 2 and the last 2 chars from a given a string. If the string length is less than 2, return instead of the empty string. 
+Sample String : 'w3resource'
+Expected Result : 'w3ce'
+Sample String : 'w3'
+Expected Result : 'w3w3'
+Sample String : ' w'
+Expected Result : Empty String
+
+solution--
+
+str1=input("enter string: ")
+if len(str1)<2:
+    print("empty string")  
+else:
+    new=str[:2]
+    new+=str[-2:]
+    print(new)
+
+#string is immutable
+4) Write a Python program to get a string from a given string where all occurrences of its first char have been changed to '$', except the first char itself. 
+Sample String : 'restart'
+Expected Result : 'resta$t'
+
+soluton--
+
+str1=input("enter string: ")
+
+n=input("enter value to replace: ")
+
+
+first=str1.find(n)
+print(first)
+
+if first!=-1:
+    modified=(str1[:first]+n+str1[first+1:].replace(n, '$'))
+    
+print(modified)
+
+5)Write a Python program to get a single string from two given strings, separated by a space and swap the first two characters of each string. 
+Sample String : 'abc', 'xyz'
+Expected Result : 'xyc abz'
+
+output--
+
+
+str1='abc'
+str2='xyz'
+
+new1=str2[:2]+str1[2]
+
+new2=str1[:2]+str2[2]
+
+print(new1," ",new2)
+
+6)Write a Python program to add 'ing' at the end of a given string (length should be at least 3). If the given string already ends with 'ing' then add 'ly' instead. If the string length of the given string is less than 3, leave it unchanged. 
+Sample String : 'abc'
+Expected Result : 'abcing'
+Sample String : 'string'
+Expected Result : 'stringly'
+
+solution--
+
+str1=input("enter string: ")
+n='ing'
+if len(str1)>=3 and n not in str1:
+   str1 = str1+'ing'
+else:
+    if n in str1:
+        str1=str1+'ly'
+
+print(str1)
+
+7)Write a Python program to find the first appearance of the substring 'not' and 'poor' from a given string, if 'not' follows the 'poor', replace the whole 'not'...'poor' substring with 'good'. Return the resulting string. 
+Sample String : 'The lyrics is not that poor!'
+'The lyrics is poor!'
+Expected Result : 'The lyrics is good!'
+'The lyrics is poor!'
+
+solution--
+
+str1=input("enter string: ")
+
+not_index=str1.find('not')
+poor_index=str1.find('poor')
+
+if not_index!=-1 and poor_index!=-1 and not_index<poor_index:
+    result=str1[:not_index]+'good'+str1[poor_index+4:]
+else:
+    result=str1
+
+print(result)
+
+8)Write a Python function that takes a list of words and returns the length of the longest one. 
+
+solution--
+"""
+k=""
+def long_word(list1):
+    for i in list1:
+        max=len(list1[0])
+        if len(i)>max:
+            max=len(i)
+            k=i
+    return k
+     
+    
+list1=["mansiagarwal","mansi","manishajhadavhgxs","manu","harshit"]
+
+ans=long_word(list1)
+print(ans)
+
+9) Write a Python program to remove the nth index character from a nonempty string. 
+
+solution--
+str1=input("enter string: ")
+n=int(input("enter index: "))
+
+for i in range(len(str1)):
+    if i==n:
+        continue
+    else:
+        print(str1[i],end="")
+                   
+output--
+enter string: mansi
+
+enter index: 2
+masi
+
+10)Write a Python program to change a given string to a new string where the first and last chars have been exchanged. 
+
+solution--
+
+str1='mansiagarwal'
+str1=str1[-1]+str1[1:-1]+str1[0]
+print(str1)
+
+output--
+lansiagarwam
+
+11)Write a Python program to remove the characters which have odd index values of a given string. 
+
+solution--
+str1='mansiagarwal'
+
+for i in range(len(str1)):
+    if i%2!=0:
+        continue
+    else:
+        print(str1[i],end="")
+
+output--
+mnigra
+
+12)Write a Python program to count the occurrences of each word in a given sentence. 
+
+solution--
+str2='i am mansi agarwal i am'
+
+str1=str2.lower().split()
+new={}
+for i in str1:
+        if i in new:
+            new[i]+=1
+        else:
+            new[i]=1
+
+for i,k in new.items():
+    print(f'{i}:{k}')
+
+output--
+['i', 'am', 'mansi', 'agarwal', 'i', 'am']
+i:2
+am:2
+mansi:1
+agarwal:1
+
+13)Write a Python script that takes input from the user and displays that input back in upper and lower cases. 
+
+solution--
+
+str2=input("enter value: ")
+str1=str2.swapcase()
+print(str1)
+        
+output--
+enter value: MANSI
+mansi
+
+14)Write a Python program that accepts a comma separated sequence of words as input and prints the unique words in sorted form (alphanumerically). 
+Sample Words : red, white, black, red, green, black
+Expected Result : black, green, red, white,red
+
+solution--
+
+str1=[]
+n=int(input("enter length: "))
+for i in range(n):
+    val=input("enter value: ")
+    str1.append(val)
+    
+print(str1)
+str2=[]
+for i in str1:
+    if i not in str2:
+        str2.append(i)
+
+print(str2)
+
+15)Write a Python function to create the HTML string with tags around the word(s). 
+Sample function and result :
+add_tags('i', 'Python') -> '<i>Python</i>'
+add_tags('b', 'Python Tutorial') -> '<b>Python Tutorial </b>'
+
+solution--
+
+str1=input("enter string: ")
+str1='<i>'+str1[:]+'</i'
+print(str1)
+    
+output--
+enter string: python
+<i>python</i
+
+16)Write a Python function to insert a string in the middle of a string. 
+Sample function and result :
+insert_sting_middle('[[]]<<>>', 'Python') -> [[Python]]
+insert_sting_middle('{{}}', 'PHP') -> {{PHP}}
+
+solution--
+tr1=input("enter value: ")
+main_str='{{}}'
+
+mid=len(main_str)//2
+
+r=main_str[:mid]+str1+main_str[mid:]
+print(r)
+
+output--
+enter value: php
+{{php}}
+
+17)Write a Python function to get a string made of 4 copies of the last two characters of a specified string (length must be at least 2). 
+Sample function and result :
+insert_end('Python') -> onononon
+insert_end('Exercises') -> eseseses
+
+solution--
+
+str1=input("enter string: ")
+
+if len(str1)>2:
+    str2=[str1[-2:] for i in range(0,4)]
+print(''.join(str2))
+    
+18)Write a Python function to get a string made of its first three characters of a specified string. If the length of the string is less than 3 then return the original string. 
+Sample function and result :
+first_three('ipy') -> ipy
+first_three('python') -> pyt
+
+solution--
+str1=input("Enter a string: ")
+if len(str1)>3:
+    str2=[str1[:3]]
+    print(''.join(str2))
+else:
+    print(str1)
+    
+
+19)Write a Python program to get the last part of a string before a specified character. 
+https://www.w3resource.com/python-exercises
+https://www.w3resource.com/python
+
+solution--
+
+str1="https://www.w3resource.com/python-exercises"
+
+
+for i in str1:
+    if i == '-':
+        break
+    print(i,end='')
+
+20)Write a Python function to reverses a string if it's length is a multiple of 4. 
+
+solution--
+
+str1=input("enter a string: ")
+
+if len(str1)%2==0:
+    print(str1[::-1])
+else:
+    print("string length is not multiple of 4")
+
+output--
+enter a string: manu
+unam
+
+21)Write a Python function to convert a given string to all uppercase if it contains at least 2 uppercase characters in the first 4 characters. 
+
+solution--
+str1=input("enter a string: ")
+count=0
+new=str1[:4]
+for i in new:
+    n=ord(i)
+    if (n>=65 and n<=90):
+        count+=1
+
+
+if count>=2:
+    print(str1.upper())
+else:
+    print("not contain more than 2 upper case in start four character")
+        
+output--
+enter a string: MaNsiagarwal
+MANSIAGARWAL
+
+22)Write a Python program to sort a string lexicographically. 
+
+output-
+str1=input("enter a string: ")
+
+new=''.join(sorted(str1))
+print(new)
+
+output--
+
+enter a string: pythonprogramming
+agghimmnnoopprrty
+
+23)Write a Python program to remove a newline in Python. 
+
+solution--
+
+str1="i am mansi\n i am btech\n student"
+new=str1.replace('\n', "")
+print(new)
+
+output--
+i am mansi i am btech student
+
+24)Write a Python program to check whether a string starts with specified characters. 
+
+solution--
+str1="mansiagarwal"
+
+n=input("enter a character: ")
+
+if str1[0]==n:
+    print("yes it start with specified character")
+else:
+    print("no")
+
+25)Write a Python program to create a Caesar encryption. 
+
+solution--
+def ceasar_encrypt(text,shift):
+    encrypted_text=""
+    for i in text:
+        if i.isalpha():
+            
+            is_upper=i.isupper()
+            i=i.lower()
+            
+            shifted_i=chr(((ord(i)-ord('a')+shift)%26)+ord('a'))
+            
+            if is_upper:
+                shifted_i=shifted_i.upper()
+            encrypted_text+=shifted_i
+        else:
+            encrypted_text+=i
+    return encrypted_text
+
+text="Hello world!"
+shift=3
+encrypted_text=ceasar_encrypt(text, shift)
+print(text)
+print(encrypted_text)
+
+output--
+Hello world!
+Khoor zruog!
+
+26) Write a Python program to display formatted text (width=50) as output. 
+
+solution--
+import textwrap
+
+text="i am mansi agarwal i live in allahabad"
+width=10
+#width=50
+
+wrapped_text=textwrap.fill(text,width)
+print(wrapped_text)
+
+output--
+i am mansi
+agarwal i
+live in
+allahabad
+
+27)Write a Python program to remove existing indentation from all of the lines in a given text. 
+
+solution--
+
+import textwrap
+
+text="""
+    This is a sample question.
+      it is used to remove 
+        indentation from 
+   specific lines
+         """
+
+print(text)
+dent1=textwrap.dedent(text)
+print(dent1)
+
+28) Write a Python program to add a prefix text to all of the lines in a string. 
+
+solution--
+import textwrap
+
+text=""" This is a sample question.
+      it is used to remove 
+        indentation from 
+   specific lines"""
+
+add1='hello'
+
+line=text.split('\n')
+prefix1=[add1+ i for i in line]
+r='\n'.join(prefix1)
+print(r)
+
+output--
+hello This is a sample question.
+hello      it is used to remove 
+hello        indentation from 
+hello   specific lines
+ 
+
+30)Write a Python program to print the following floating numbers upto 2 decimal places. 
+
+solution--
+
+num=float(input("enter float value"))
+print('{:.2f}'.format(num))
+
+output--
+enter float value4
+4.00
+
+31)Write a Python program to print the following floating numbers with no decimal places. 
+
+solution--
+num=float(input("enter float value"))
+print('{:.0f}'.format(num))
+
+output--
+enter float value2.345
+2
+
+33) Write a Python program to print the following integers with zeros on the left of specified width. 
+solution--
+
+import textwrap
+text=[1,2,3,4,5]
+width=30
+#f=str(text).zfill(width)
+#new=str(text).rjust(width,'0')
+new=str(text).ljust(width,'0')
+print(new)
+
+output--
+[1, 2, 3, 4, 5]000000000000000
+
+34)Write a Python program to print the following integers with '*' on the right of specified width. 
+
+solution--
+
+import textwrap
+text=[1,2,3,4,5]
+width=30
+#f=str(text).zfill(width)
+f=str(text).rjust(width,'*')
+#new=str(text).ljust(width,'0')
+print(f)
+
+output--
+***************[1, 2, 3, 4, 5]
+
+35)Write a Python program to display a number with a comma separator. 
+
+solution--
+str1="1234"
+new=','.join(str1)
+print(new)
+
+output--
+1,2,3,4
+
+36)Write a Python program to format a number with a percentage. 
+
+solution--
+
+num=0.45
+ans="{:.2%}".format(num)
+print(ans)
+
+output--
+45.00%
+
+37)Write a Python program to display a number in left, right and center aligned of width 10. 
+
+solution--
+num=34
+width=10
+
+right=('{:>{width}}'.format(num, width=width))
+print(right)
+
+left=('{:<{width}}'.format(num, width=width))
+print(left)
+
+center=('{:^{width}}'.format(num, width=width))
+print(center)
+
+output--
+        34
+34        
+    34    
+
+38)Write a Python program to count occurrences of a substring in a string. 
+
+output--
+(method-1)
+str1=input("enter string: ")
+substring=input("enter string: ")
+c=str1.count(substring)
+print(c)
+
+output--
+enter string: majduhmahdbema
+enter string: ma
+3
+
+(method-2)
+str1=input("enter string: ")
+substring=input("enter string: ")
+length=len(substring)
+count=0
+
+for i in range(len(str1)):
+#sliding window
+    window=str1[i:i+length]
+    if window==substring:
+        count+=1
+   
+print("occurance of substring: ",count)
+
+39)Write a Python program to reverse a string. 
+solution--
+
+(method1)
+str1=input("enter string: ")
+st=str1[::-1]
+print(st)
+
+(method2)
+
+str1=input("enter string: ")
+length=len(str1)
+new_str=""
+while(length!=0):
+    new_str=new_str+str1[length-1]
+    length-=1
+print(new_str)
+
+40) Write a Python program to reverse words in a string. 
+
+solution--
+
+str1="i am mansi agarwal"
+n=str1.split()
+new=''
+for i in n:
+    length=len(i)
+    while length!=0:
+        new=new+i[length-1]
+        length-=1
+    new=new+' '
+print(new)
+
+output--
+i ma isnam lawraga 
+
+41)Write a Python program to strip a set of characters from a string. 
+
+solution--
+str1="i am mansi agarwal"
+start=int(input("enter a start point"))
+end1=int(input("enter end point: "))
+for i in range(len(str1)):
+    if i>=start and i<=end1:
+        print(str1[i],end="")
+
+output--
+enter a start point3
+enter end point: 15
+m mansi agarw
+
+42)Write a Python program to count repeated characters in a string. 
+Sample string: 'thequickbrownfoxjumpsoverthelazydog'
+Expected output :
+o 4
+e 3
+u 2
+h 2
+r 2
+t 2
+
+solution--
+from collections import Counter
+str1="thequickbrownfoxjumpsoverthelazydog"
+
+new=Counter(str1)
+print(new)
+
+print("*****")
+
+list1=list(new.values())
+print(list1)
+list2=list(new.keys())
+print(list2)
+
+print("*********")
+for i,k in zip(list2,list1):
+    if k>1:
+        print(f'{i}:{k}')
+            
+43)Write a Python program to print the square and cube symbol in the area of a rectangle and volume of a cylinder. 
+Sample output:
+The area of the rectangle is 1256.66cm2
+The volume of the cylinder is 1254.725cm3
+
+solution--
+l=int(input("enter length: "))
+b=int(input("enter breadth: "))
+area1=2*(l+b)
+ans=str(area1)+'cm^2'
+print(ans)
+
+44)Write a Python program to print the index of the character in a string. 
+Sample string: w3resource
+Expected output:
+Current character w position at 0
+Current character 3 position at 1
+Current character r position at 2
+- - - - - - - - - - - - - - - - - - - - - - - - -
+Current character c position at 8
+Current character e position at 9
+
+solution--
+
+str1="w3resource"
+for i in range(len(str1)):
+    print(str1[i]," ",i)
+
+45)Write a Python program to check if a string contains all letters of the alphabet. 
+
+solution--
+str1="abcdefgAijklmnopqrstuvwxyz"
+
+for i in str1:
+    n=ord(i)
+    if (n>=65 and n<=90):
+        print("yes it contain all alphabets A-Z")
+        break
+    if (n>=97 and n<=122):
+        print("yes it contains all alphabets a-z")
+        break
+    else:
+        print("not present")
+
+output--
+yes it contains all alphabets a-z
+
+46)Write a Python program to convert a string in a list. 
+solution--
+str1="mansi"
+list1=[]
+for i in str1:
+    list1.append(i)
+print(list1)
+
+output--
+['m', 'a', 'n', 's', 'i']
+
+47)Write a Python program to lowercase first n characters in a string. 
+    
+solution--
+str1="MANSI AGARWAL"
+
+n=int(input("enter index: "))
+
+n1=[]
+for i in range(len(str1)):
+    if i<=n:
+        n1.append(str1[i])
+        
+num1=''.join(n1)
+
+mystr=num1.casefold()
+
+
+n2=[]
+for i in range(len(str1)):
+    if i>n:
+        n2.append(str1[i])
+num3=''.join(n2)
+
+ans=mystr+num3
+print(ans)
+
+output--
+enter index: 7
+mansi agARWAL
+
+48)Write a Python program to swap comma and dot in a string. 
+Sample string: "32.054,23"
+Expected Output: "32,054.23"
+
+solution--
+
+input1="32.054,23"
+
+new=input1.replace(',','TEMP').replace('.',',').replace('TEMP','.')
+print(new)
+
+49)Write a Python program to count and display the vowels of a given text. 
+
+solution--
+str1="mansi agarwal"
+a=e=k=o=u=0
+for i in str1:
+    if i=='a' :
+        a+=1
+    if i=='e':
+        e+=1
+    if i=='i':
+        k+=1
+    if i=='o':
+        o+=1
+    if i=='u':
+        u+=1
+
+print("Counts of vowels:")
+print("a:", a)
+print("e:", e)
+print("i:", i)
+print("o:", o)
+print("u:", u)
+
+output--
+Counts of vowels:
+a: 4
+e: 0
+i: l
+o: 0
+u: 0
+
+
+50)Write a Python program to split a string on the last occurrence of the delimiter. 
+
+solution--
+str1='I am mansi agarwal'
+
+print(str1)
+length=len(str1)
+new=''
+
+str_new=str1[::-1]
+
+
+
+for i in str_new:
+    if i==' ':
+         break
+    new+=i
+
+my1=new[::-1]
+
+j=str_new.find(' ')
+new2=''
+for i in range(j+1,len(str_new)):
+        new2+=str_new[i]
+
+my2=new2[::-1]
+
+print(my2)
+print(my1)
+        
+output--
+I am mansi agarwal
+I am mansi
+agarwal
+
+51)Write a Python program to find the first non-repeating character in given string. 
+
+solution--
+from collections import Counter
+str1='i am mansi agarwal'
+
+new=Counter(str1)
+
+
+for i,k in new.items():
+    if k==1:
+        print("first non repeating character:",i)
+        break
+
+output--
+first non repeating character: n
+
+52)Write a Python program to print all permutations with given repetition number of characters of a given string. 
+
+solution--
+from itertools import product
+str1='abc'
+rep=2
+permutation=product(str1,repeat=rep)
+for i in permutation:
+    print(''.join(i))
+
+output--
+aa
+ab
+ac
+ba
+bb
+bc
+ca
+cb
+cc
+
+53)Write a Python program to find the first repeated character in a given string. 
+
+solution--
+from collections import Counter
+str1="mansiagarwal"
+mystr=Counter(str1)
+
+
+for i,k in mystr.items():
+    if k>1:
+        print("first repeated character: ",i)
+        break
+    
+output--
+first repeated character:  a
+
+54)Write a Python program to find the first repeated character of a given string where the index of first occurrence is smallest. 
+
+solution--
+from collections import Counter
+str1="mansiagarwal"
+mystr=Counter(str1)
+
+
+for i,k in mystr.items():
+    if k>1:
+        print("first repeated character: ",i)
+        break
+
+55)Write a Python program to find the first repeated word in a given string. 
+
+solution--
+
+input1="i am is am a girl"
+word=input1.split()
+seen=set()
+for i in word:
+    if i in seen:
+        print(i)
+    seen.add(i)
+
+ouput--
+am
+
+56) Write a Python program to find the second most repeated word in a given string. 
+
+solution--
+from collections import Counter
+
+str1="i am is a mansi just mansi just  just sky is go is h is"
+
+words=str1.split()
+
+count_word=Counter(words)
+#print(count_word)
+
+ans=sorted(count_word.items(),key=lambda x:x[1],reverse=True)
+#print(ans)
+
+max_count=ans[0][1]
+
+for i,k in ans:
+    if k<max_count:
+        print(i)
+        break
+       
+
+output--
+just
+
+    
+57)Write a Python program to remove spaces from a given string. 
+
+solution--
+str1="i am mansi agarwal"
+for i in str1:
+    if i==" ":
+        continue
+    else:
+        print(i,end="")
+
+output--
+iammansiagarwal
+
+58)Write a Python program to move spaces to the front of a given string. 
+
+solution--
+str1='i  am     mansiagarwal'
+space=0
+new=''
+for i in str1:
+    if i==' ':
+        space+=1
+        continue
+    else:
+        new+=i
+ans=''
+while space!=0:
+    ans+=' '
+    space-=1
+
+ans=ans+new
+print(ans)
+        
+output--
+       iammansiagarwal
+
+59)Write a Python program to find the maximum occurring character in a given string. 
+
+solution--
+
+from collections import Counter
+str1="mansiagarwal"
+count_char=Counter(str1)
+m=sorted(count_char.items(),key=lambda x:x[1],reverse=True)
+print("maximum occuring character:",m[0][0])
+
+output--
+maximum occuring character: a
+
+60)Write a Python program to capitalize first and last letters of each word of a given string. 
+
+solution--
+str1="mansi agarwal"
+word=str1.split()
+result=[]
+
+for i in word:
+    if len(word)>1:
+        cap=i[0].capitalize()+i[1:-1]+i[-1].capitalize()
+    else:
+        cap=i.capitalize()
+    result.append(cap)
+    
+a1=' '.join(result)
+print(a1)
+
+output--
+MansI AgarwaL        
+
+    
+
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
