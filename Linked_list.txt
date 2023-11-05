@@ -1,0 +1,48 @@
+Linked list
+
+1)create linked list
+
+#create a node
+class Node:
+    def __init__(self,data):
+        self.item=data
+        self.next=None
+        
+#create linked list
+class LinkedList:
+    def __init__(self):
+        self.head=None
+
+     #insert in LL  
+    def insert_at_start(self,data):
+        new_node=Node(data)
+        new_node.next=self.head
+        self.head=new_node
+
+       #traversing a LL 
+    def  traverse(self):
+        if self.head is None:
+            print("Linked list is empty")
+            return
+        else:
+            temp=self.head
+            while temp is not None:
+                print(temp.item," ")
+                temp=temp.next
+                
+new_ll=LinkedList()
+new_ll.insert_at_start(5)
+new_ll.insert_at_start(4)
+new_ll.insert_at_start(78)
+
+new_ll.traverse()
+
+
+output--
+78
+4
+5
+
+
+        
+        
