@@ -1,0 +1,146 @@
+select curdate();
+
+select now();
+select current_time();
+select current_timestamp();
+
+select year(current_date());
+
+select month(current_date());
+
+select day(current_date());
+
+select hour(current_date());
+
+select hour(now());
+select min(now());
+select second(now());
+
+select monthname(curdate());
+select week(curdate());
+
+select yearweek(curdate());
+
+select dayofyear(curdate());
+select dayofmonth(curdate());
+select dayofweek(curdate());
+
+
+select timestamp(now());
+
+
+
+CREATE TABLE EmployeeEventsCalender (
+    event_id INT PRIMARY KEY,
+    event_name VARCHAR(255),
+    event_date DATETIME
+);
+
+#insert data of eventsdate in 2024 and month like 1st month then 2 month then 3rd month and 4th month
+INSERT INTO EmployeeEvents VALUES
+(1, 'Meeting', '2023-01-15 09:30:00'),
+(2, 'Training', '2023-02-20 14:00:00'),
+(3, 'Presentation', '2023-03-25 11:45:00'),
+(4, 'Team Building', '2023-04-10 10:00:00');
+
+select * from employeeevents;
+
+
+
+select year(event_date)as event_year,
+month(event_date)as event_month,
+day(event_date)as event_day,
+hour(event_date)as event_hour,
+minute(event_date)as event_min,
+second(event_date)as event_second 
+from employeeevents;
+
+
+
+
+
+
+#In the context of the DATE_FORMAT function or other formatting functions in SQL, the percent sign is used as a placeholder for format specifiers. 
+#Each format specifier represents a 
+#component of the date or time, and the % is followed by a character that denotes the type of information to be displayed (such as year, month, day, hour, etc.).
+
+
+#DATE_FORMAT()
+
+%Y: Year with century as a decimal number (e.g., 2023)
+%m: Month as a zero-padded decimal number (01 to 12)
+%d: Day of the month as a zero-padded decimal number (01 to 31)
+%H: Hour (00 to 23)
+%i: Minutes (00 to 59)
+%s: Seconds (00 to 59);
+
+
+#Formats a date or datetime value according to the specified format.
+
+select * from employeeevents;
+
+#standard format 
+SELECT event_name, DATE_FORMAT(event_date, '%Y-%m-%d %H:%i:%s') AS formatted_date
+FROM EmployeeEvents;
+
+select event_name, date_format(event_date, "%d-%m-%y %h:%i:%s")as formatted_date
+from employeeevents;
+
+
+
+
+
+
+
+#datediff
+#Calculates the difference in days between two dates.
+
+
+
+SELECT event_name, DATEDIFF(NOW(), event_date) AS days_difference
+FROM EmployeeEvents;
+
+select event_name,datediff(now(),event_date)as days_diff
+from employeeevents;
+
+
+select event_name,datediff(event_date,now())as days_diff
+from employeeevents;
+
+select * from EmployeeEvents;
+
+
+
+#timestampdiff
+#Calculates the difference between two datetime values in a specified unit.
+
+SELECT event_name, TIMESTAMPDIFF(HOUR, event_date, NOW()) AS hours_difference
+FROM EmployeeEvents;
+
+
+
+
+
+
+
+
+
+#addtime() and subdate()
+#Adds or subtracts a specified time interval from a date or datetime.
+
+select * from employeeevents;
+
+SELECT
+    event_name,
+    ADDDATE(event_date, INTERVAL 7 DAY) AS event_date_after_7_days,
+    SUBDATE(event_date, INTERVAL 3 MONTH) AS event_date_before_3_months
+FROM EmployeeEvents;
+
+
+
+
+
+
+
+
+
